@@ -58,5 +58,13 @@ public class ShovelAttack : MonoBehaviour
                 enemy.Health -= damage ;
             }
         }
+        if (collision.tag == "DUMMY")
+        {
+            DUMMY d = collision.GetComponent<DUMMY>();
+            if (d != null)
+            {
+                d.takeDamage(damage);
+            }
+        }
     }
 }

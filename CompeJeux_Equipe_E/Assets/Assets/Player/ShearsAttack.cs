@@ -6,7 +6,7 @@ public class ShearsAttack : MonoBehaviour
 {
     public Collider2D shearsCollider;
     Vector2 rightAttackOffset;
-    float damage = 3;
+    float damage = 1.5f;
     // Start is called before the first frame update
     void Start()
     {
@@ -56,6 +56,14 @@ public class ShearsAttack : MonoBehaviour
             if (enemy != null)
             {
                 enemy.Health -= damage / 3;
+            }
+        }
+        if (collision.tag == "DUMMY")
+        {
+            DUMMY d = collision.GetComponent<DUMMY>();
+            if (d != null)
+            {
+                d.takeDamage(damage);
             }
         }
     }
