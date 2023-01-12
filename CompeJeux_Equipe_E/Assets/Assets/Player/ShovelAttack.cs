@@ -45,7 +45,7 @@ public class ShovelAttack : MonoBehaviour
 
             if (enemy != null)
             {
-                enemy.Health -= damage;
+                enemy.Health -= damage / 2;
             }
         }
         //resist to tool
@@ -55,7 +55,7 @@ public class ShovelAttack : MonoBehaviour
 
             if (enemy != null)
             {
-                enemy.Health -= damage ;
+                enemy.Health -= damage / 5 ;
             }
         }
         if (collision.tag == "DUMMY")
