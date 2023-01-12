@@ -6,10 +6,10 @@ public class ScytheAttack : MonoBehaviour
 {
     public Collider2D scytheCollider;
     Vector2 rightAttackOffset;
+    float damage = 3;
     // Start is called before the first frame update
     void Start()
     {
-        scytheCollider = GetComponent<Collider2D>();
         rightAttackOffset = transform.localPosition;
     }
     public void AttackRight()
@@ -29,34 +29,34 @@ public class ScytheAttack : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //weak to tool
-        if (collision.tag == "")
+        if (collision.tag == "X")
         {
-            /*Enemy enemy = collision.GetComponent<Enemy>();
+            Enemy enemy = collision.GetComponent<Enemy>();
 
             if (enemy != null)
             {
-                enemy.health -= 5;
-            }*/
+                enemy.health -= damage * 3;
+            }
         }
         //neutral to tool
-        if (collision.tag == "")
+        if (collision.tag == "Y")
         {
-            /*Enemy enemy = collision.GetComponent<Enemy>();
+            Enemy enemy = collision.GetComponent<Enemy>();
 
             if (enemy != null)
             {
-                enemy.health -= 3;
-            }*/
+                enemy.health -= damage;
+            }
         }
         //resist to tool
-        if (collision.tag == "")
+        if (collision.tag == "Z")
         {
-            /* Enemy enemy = collision.GetComponent<Enemy>();
+            Enemy enemy = collision.GetComponent<Enemy>();
 
-             if (enemy != null)
-             {
-                 enemy.health -= 1;
-             }*/
+            if (enemy != null)
+            {
+                enemy.health -= damage / 3;
+            }
         }
     }
 }

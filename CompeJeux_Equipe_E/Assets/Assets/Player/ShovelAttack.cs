@@ -6,10 +6,10 @@ public class ShovelAttack : MonoBehaviour
 {
     public Collider2D shovelCollider;
     Vector2 rightAttackOffset;
+    float damage = 5;
     // Start is called before the first frame update
     void Start()
     {
-        shovelCollider = GetComponent<Collider2D>();
         rightAttackOffset= transform.localPosition;
     }
     public void AttackRight()
@@ -29,34 +29,34 @@ public class ShovelAttack : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //weak to tool
-        if (collision.tag == "")
+        if (collision.tag == "Z")
         {
-            /*Enemy enemy = collision.GetComponent<Enemy>();
+            Enemy enemy = collision.GetComponent<Enemy>();
 
             if (enemy != null)
             {
-                enemy.health -= 5;
-            }*/
+                enemy.health -= damage * 3;
+            }
         }
         //neutral to tool
-        if (collision.tag == "")
+        if (collision.tag == "X")
         {
-            /*Enemy enemy = collision.GetComponent<Enemy>();
+            Enemy enemy = collision.GetComponent<Enemy>();
 
             if (enemy != null)
             {
-                enemy.health -= 3;
-            }*/
+                enemy.health -= damage;
+            }
         }
         //resist to tool
-        if (collision.tag == "")
+        if (collision.tag == "Y")
         {
-           /* Enemy enemy = collision.GetComponent<Enemy>();
+            Enemy enemy = collision.GetComponent<Enemy>();
 
             if (enemy != null)
             {
-                enemy.health -= 1;
-            }*/
+                enemy.health -= damage ;
+            }
         }
     }
 }

@@ -36727,6 +36727,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4665691945311807560, guid: baa927f8ee606394dafadfce1c07943b, type: 3}
+      propertyPath: shearsCollider
+      value: 
+      objectReference: {fileID: 1728220130}
+    - target: {fileID: 5494114861959444357, guid: baa927f8ee606394dafadfce1c07943b, type: 3}
+      propertyPath: scytheCollider
+      value: 
+      objectReference: {fileID: 1168189095}
     - target: {fileID: 7900419656040903116, guid: baa927f8ee606394dafadfce1c07943b, type: 3}
       propertyPath: m_Size.x
       value: 0.95666665
@@ -41822,6 +41830,11 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!61 &1168189095 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 7196869221381448955, guid: baa927f8ee606394dafadfce1c07943b, type: 3}
+  m_PrefabInstance: {fileID: 558044343}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1182330654
 GameObject:
   m_ObjectHideFlags: 0
@@ -44134,6 +44147,11 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!61 &1728220130 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 6047576596021549111, guid: baa927f8ee606394dafadfce1c07943b, type: 3}
+  m_PrefabInstance: {fileID: 558044343}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2081739875 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2775919146409806670, guid: baa927f8ee606394dafadfce1c07943b, type: 3}
