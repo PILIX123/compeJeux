@@ -88,6 +88,8 @@ public class PlayerControls : MonoBehaviour
         Vector3 playerPos = new Vector3(transform.position.x, transform.position.y);
         Vector3Int cellpos = grid.WorldToCell(playerPos);
         TileBase tile = tools.GetTile(cellpos);
+        if (tile == null)
+            return;
         if (tile.name == "farming-tileset_104")
             Tool = "Scythe";
         if (tile.name == "farming-tileset_105")
