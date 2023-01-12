@@ -82,24 +82,35 @@ public class PlayerControls : MonoBehaviour
         Vector3 playerPos = new Vector3(transform.position.x, transform.position.y);
         Vector3Int cellpos = grid.WorldToCell(playerPos);
         TileBase tile = tools.GetTile(cellpos);
-        if( tile.name == "farming-tileset_104")
-        {
+        if (tile.name == "farming-tileset_104")
             Tool = "Scythe";
-        }
-
+        if (tile.name == "farming-tileset_105")
+            Tool = "Shovel";
+        if (tile.name == "shears")
+            Tool = "Shears";
     }
     void OnFire()
     {
-        if(Tool == "Scythe")
-        {
+        if (Tool == "Scythe")
             ScytheAttack();
-        }
+        if (Tool == "Shovel")
+            ShovelAttack();
+        if (Tool == "Shears")
+            ShearsAttack();
     }
     void ScytheAttack()
     {
         scytheAttack.AttackLeft();
-        print("WOW");
-
-
+        print("scythe");
+    }
+    void ShovelAttack()
+    {
+        shovelAttack.AttackLeft();
+        print("Shovel");
+    }
+    void ShearsAttack()
+    {
+        shearsAttack.AttackLeft();
+        print("shears");
     }
 }
