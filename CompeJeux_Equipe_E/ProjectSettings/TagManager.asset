@@ -16,6 +16,7 @@ TagManager:
   - Y
   - Z
   - DUMMY
+  - MenuFlower
   layers:
   - Default
   - TransparentFX
