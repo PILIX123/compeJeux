@@ -15,4 +15,20 @@ public class MouseEvents : MonoBehaviour
         Debug.Log("Quit");
         Application.Quit();
     }
+    public void ToOptions()
+    {
+        SceneManager.LoadScene("OptionsMenu");
+    }
+    public void BackToMain()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+    public void switchCouleurOn()
+    {
+
+    }
+    public void skipTuto()
+    {
+
+    }
 }
