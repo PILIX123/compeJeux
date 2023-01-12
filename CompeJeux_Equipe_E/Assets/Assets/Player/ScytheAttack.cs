@@ -45,7 +45,7 @@ public class ScytheAttack : MonoBehaviour
 
             if (enemy != null)
             {
-                enemy.Health -= damage;
+                enemy.Health -= damage / 2;
             }
         }
         //resist to tool
@@ -55,7 +55,7 @@ public class ScytheAttack : MonoBehaviour
 
             if (enemy != null)
             {
-                enemy.Health -= damage / 3;
+                enemy.Health -= damage / 5;
             }
         }
         if(collision.tag == "DUMMY")
