@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 18ff03e6842b095488798243faa0ad12
+guid: bdc687370550ea242adb4202a0aff899
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,127 +117,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: playerwalk_0
+      name: playerattackcisaille_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 5
         y: 0
         width: 48
-        height: 44
+        height: 38
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 960db53dbadc1eb40a7ab4bf65ca5cb9
-      internalID: 1035975768
+      spriteID: 6c8525d417825f64990fc59c0c75dd4c
+      internalID: -852044638
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: playerwalk_1
+      name: playerattackcisaille_1
       rect:
         serializedVersion: 2
-        x: 48
+        x: 55
         y: 0
         width: 48
-        height: 44
+        height: 38
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb1904630156d954c82466e5f70544bf
-      internalID: -602067280
+      spriteID: 04b67cac62d89df428d74b482affcd4c
+      internalID: 173889822
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: playerwalk_2
+      name: playerattackcisaille_2
       rect:
         serializedVersion: 2
-        x: 96
+        x: 103
         y: 0
         width: 48
-        height: 44
+        height: 38
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25ff218f6a55253478beaa1bc49c6f31
-      internalID: -657429997
+      spriteID: 7ad39316d91a77049a213c51d326ba49
+      internalID: -1577121434
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: playerwalk_3
+      name: playerattackcisaille_3
       rect:
         serializedVersion: 2
-        x: 144
+        x: 151
         y: 0
         width: 48
-        height: 44
+        height: 38
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0696edd214ab1a3458d5a2e8d81aa77d
-      internalID: 834791045
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: playerwalk_4
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 48
-        height: 44
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e8bcfd36c211d1d4c93a67e86b48a902
-      internalID: -2133057344
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: playerwalk_5
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 0
-        width: 48
-        height: 44
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8fbe528acf1b15c4e8fd2c3e249d6892
-      internalID: -186364528
+      spriteID: 93d87f136f16400468d193827dcda2f0
+      internalID: 859580906
       vertices: []
       indices: 
       edges: []
@@ -253,12 +211,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      playerwalk_4: -2133057344
-      playerwalk_2: -657429997
-      playerwalk_1: -602067280
-      playerwalk_5: -186364528
-      playerwalk_0: 1035975768
-      playerwalk_3: 834791045
+      playerattackcisaille_1: 173889822
+      playerattackcisaille_3: 859580906
+      playerattackcisaille_0: -852044638
+      playerattackcisaille_2: -1577121434
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
