@@ -58,5 +58,13 @@ public class ScytheAttack : MonoBehaviour
                 enemy.Health -= damage / 3;
             }
         }
-    }
+        if(collision.tag == "DUMMY")
+        {
+            DUMMY d = collision.GetComponent<DUMMY>();
+            if(d != null)
+            {
+                d.takeDamage(damage);
+            }
+        }
+    } 
 }
