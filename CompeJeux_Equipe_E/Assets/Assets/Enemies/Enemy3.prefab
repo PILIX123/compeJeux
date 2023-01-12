@@ -161,4 +161,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnMapLocation: {x: 0, y: 0}
-  spawnMap: {fileID: 0}
+  spawnMap: {fileID: 2800000, guid: 73a284091c7b0914ba89b79e0f14fe04, type: 3}
