@@ -11,6 +11,9 @@ TagManager:
   - X
   - Y
   - Z
+  - Play
+  - Quit
+  - Settings
   layers:
   - Default
   - TransparentFX
