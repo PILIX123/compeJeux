@@ -14,6 +14,7 @@ public class PlayerControls : MonoBehaviour
     public ScytheAttack scytheAttack;
     public ShearsAttack shearsAttack;
     public Tilemap tools;
+    public ParticleSystem LeafParticles;
     Grid grid;
     public string Tool = "";
 
@@ -165,4 +166,9 @@ public class PlayerControls : MonoBehaviour
             shearsAttack.AttackRight();
         }
     }
+    void PlayLeafParticles()
+    {
+        LeafParticles.Play();
+    }
+
 }
