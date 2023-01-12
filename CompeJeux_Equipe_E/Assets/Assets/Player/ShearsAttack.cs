@@ -35,7 +35,7 @@ public class ShearsAttack : MonoBehaviour
 
             if (enemy != null)
             {
-                enemy.health -= damage * 3;
+                enemy.Health -= damage * 3;
             }
         }
         //neutral to tool
@@ -45,7 +45,7 @@ public class ShearsAttack : MonoBehaviour
 
             if (enemy != null)
             {
-                enemy.health -= damage;
+                enemy.Health -= damage;
             }
         }
         //resist to tool
@@ -55,7 +55,7 @@ public class ShearsAttack : MonoBehaviour
 
             if (enemy != null)
             {
-                enemy.health -= damage / 3;
+                enemy.Health -= damage / 3;
             }
         }
     }

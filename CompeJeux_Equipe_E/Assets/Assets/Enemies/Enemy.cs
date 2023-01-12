@@ -16,11 +16,13 @@ public class Enemy : MonoBehaviour
         }
         get { return health; }
     }
-
-    public float health = Random.Range(5, 16);
-
+    public float health;
     public void Defeated()
     {
         Destroy(gameObject);
+    }
+    public void Start()
+    {
+        health = Random.Range(5, 16);
     }
 }
