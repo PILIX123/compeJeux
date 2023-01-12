@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerControllerTest : MonoBehaviour
 {
     Rigidbody2D rb;
     float walkSpeed = 4f, speedLimit = 0.7f, inputH, inputV;
