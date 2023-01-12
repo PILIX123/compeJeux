@@ -75,8 +75,8 @@ public class PlayerControls : MonoBehaviour
     {
         if (canDash) {
             canDash = false;
-            animator.SetTrigger("isDash");
             moveSpeed= 2f;
+            animator.SetTrigger("isDashing");
         }
     }
     void StopDash()
