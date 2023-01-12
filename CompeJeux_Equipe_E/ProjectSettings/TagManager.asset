@@ -8,6 +8,9 @@ TagManager:
   - Faucille
   - Cisaille
   - Tools
+  - X
+  - Y
+  - Z
   layers:
   - Default
   - TransparentFX

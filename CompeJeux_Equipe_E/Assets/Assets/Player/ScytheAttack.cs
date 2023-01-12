@@ -29,7 +29,7 @@ public class ScytheAttack : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //weak to tool
-        if (collision.tag == "")
+        if (collision.tag == "X")
         {
             /*Enemy enemy = collision.GetComponent<Enemy>();
 
@@ -39,7 +39,7 @@ public class ScytheAttack : MonoBehaviour
             }*/
         }
         //neutral to tool
-        if (collision.tag == "")
+        if (collision.tag == "Y")
         {
             /*Enemy enemy = collision.GetComponent<Enemy>();
 
@@ -49,7 +49,7 @@ public class ScytheAttack : MonoBehaviour
             }*/
         }
         //resist to tool
-        if (collision.tag == "")
+        if (collision.tag == "Z")
         {
             /* Enemy enemy = collision.GetComponent<Enemy>();
 

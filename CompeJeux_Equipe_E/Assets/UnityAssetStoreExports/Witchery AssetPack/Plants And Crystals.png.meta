@@ -161,7 +161,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 1
+  spritePixelsToUnits: 50
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -217,6 +217,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -1045,11 +1057,10 @@ TextureImporter:
       Plants And Crystals_17: 2332127605831643287
       Plants And Crystals_19: 442746648316630721
       Plants And Crystals_8: -6055664330625212304
-      Plants And Crystals_29: -3324994924616178770
+      Plants And Crystals_4: -5591199766593886445
       Plants And Crystals_34: 7374285201978452676
       Plants And Crystals_24: -7633125923404860453
       Plants And Crystals_32: 2029556221458309048
-      Plants And Crystals_37: -3192465413213487968
       Plants And Crystals_21: -6860680266731226242
       Plants And Crystals_26: -2325578475579524368
       Plants And Crystals_9: -261188484751824609
@@ -1074,9 +1085,10 @@ TextureImporter:
       Plants And Crystals_31: 4162389010457526997
       Plants And Crystals_14: 2948076040184912122
       Plants And Crystals_25: 7203542408485079521
+      Plants And Crystals_29: -3324994924616178770
       Plants And Crystals_3: 7593877531695027751
+      Plants And Crystals_37: -3192465413213487968
       Plants And Crystals_20: 229581588186388940
-      Plants And Crystals_4: -5591199766593886445
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
