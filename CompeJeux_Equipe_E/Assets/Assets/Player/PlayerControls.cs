@@ -46,12 +46,10 @@ public class PlayerControls : MonoBehaviour
             {
                 animator.SetBool("isMoving", false);
             }
-
             if (movementInput.x < 0)
                 spriteRenderer.flipX = true;
             else if (movementInput.x > 0)
                 spriteRenderer.flipX = false;
-
         }
     }
     private bool TryMove(Vector2 direction)
@@ -81,11 +79,6 @@ public class PlayerControls : MonoBehaviour
     {
         canMove = true;
     }
-    public void SwordAttack()
-    {
-        LockMovement();
-
-    }
     void OnSelectPlant()
     {
 
@@ -105,25 +98,56 @@ public class PlayerControls : MonoBehaviour
     void OnFire()
     {
         if (Tool == "Scythe")
-            ScytheAttack();
+        {
+            animator.SetTrigger("hasScythe");
+        }
         if (Tool == "Shovel")
-            ShovelAttack();
+        {
+            animator.SetTrigger("hasShovel");
+        }
         if (Tool == "Shears")
-            ShearsAttack();
+        {
+            animator.SetTrigger("hasShears");
+        }
     }
     void ScytheAttack()
     {
-        scytheAttack.AttackLeft();
-        print("scythe");
+        if(spriteRenderer.flipX == true)
+        {
+            scytheAttack.AttackLeft();
+        }
+        else
+        {
+            scytheAttack.AttackRight();
+        }
+    }
+    void StopAttack()
+    {
+        scytheAttack.StopAttack();
+        shovelAttack.StopAttack();
+        shearsAttack.StopAttack();
     }
     void ShovelAttack()
     {
-        shovelAttack.AttackLeft();
-        print("Shovel");
+        if (spriteRenderer.flipX == true)
+        {
+            shovelAttack.AttackLeft();
+        }
+        else
+        {
+            shovelAttack.AttackRight();
+        }
+        
     }
     void ShearsAttack()
     {
-        shearsAttack.AttackLeft();
-        print("shears");
+        if (spriteRenderer.flipX == true)
+        {
+            shearsAttack.AttackLeft();
+        }
+        else
+        {
+            shearsAttack.AttackRight();
+        }
     }
 }
