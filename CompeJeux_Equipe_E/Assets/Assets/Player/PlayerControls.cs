@@ -60,10 +60,6 @@ public class PlayerControls : MonoBehaviour
     {
         movementInput = movementValue.Get<Vector2>();
     }
-    void OnFire()
-    {
-
-    }
     public void LockMovement()
     {
         canMove = false;
@@ -85,6 +81,25 @@ public class PlayerControls : MonoBehaviour
     {
         Vector3 playerPos = new Vector3(transform.position.x, transform.position.y);
         Vector3Int cellpos = grid.WorldToCell(playerPos);
-        TileBase anythong = tools.GetTile(cellpos);
+        TileBase tile = tools.GetTile(cellpos);
+        if( tile.name == "farming-tileset_104")
+        {
+            Tool = "Scythe";
+        }
+
+    }
+    void OnFire()
+    {
+        if(Tool == "Scythe")
+        {
+            ScytheAttack();
+        }
+    }
+    void ScytheAttack()
+    {
+        scytheAttack.AttackLeft();
+        print("WOW");
+
+
     }
 }
