@@ -105,11 +105,17 @@ public class PlayerControls : MonoBehaviour
     void OnFire()
     {
         if (Tool == "Scythe")
-            ScytheAttack();
+        {
+            animator.SetTrigger("hasScythe");
+        }
         if (Tool == "Shovel")
-            ShovelAttack();
+        {
+            animator.SetTrigger("hasShovel");
+        }
         if (Tool == "Shears")
-            ShearsAttack();
+        {
+            animator.SetTrigger("hasShears");
+        }
     }
     void ScytheAttack()
     {
