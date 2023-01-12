@@ -6,10 +6,10 @@ public class ShearsAttack : MonoBehaviour
 {
     public Collider2D shearsCollider;
     Vector2 rightAttackOffset;
+    float damage = 1.5f;
     // Start is called before the first frame update
     void Start()
     {
-        shearsCollider = GetComponent<Collider2D>();
         rightAttackOffset = transform.localPosition;
     }
     public void AttackRight()
@@ -29,34 +29,42 @@ public class ShearsAttack : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //weak to tool
-        if (collision.tag == "")
+        if (collision.tag == "Y")
         {
-            /*Enemy enemy = collision.GetComponent<Enemy>();
+            Enemy enemy = collision.GetComponent<Enemy>();
 
             if (enemy != null)
             {
-                enemy.health -= 5;
-            }*/
+                enemy.Health -= damage * 3;
+            }
         }
         //neutral to tool
-        if (collision.tag == "")
+        if (collision.tag == "Z")
         {
-            /*Enemy enemy = collision.GetComponent<Enemy>();
+            Enemy enemy = collision.GetComponent<Enemy>();
 
             if (enemy != null)
             {
-                enemy.health -= 3;
-            }*/
+                enemy.Health -= damage;
+            }
         }
         //resist to tool
-        if (collision.tag == "")
+        if (collision.tag == "X")
         {
-            /* Enemy enemy = collision.GetComponent<Enemy>();
+            Enemy enemy = collision.GetComponent<Enemy>();
 
-             if (enemy != null)
-             {
-                 enemy.health -= 1;
-             }*/
+            if (enemy != null)
+            {
+                enemy.Health -= damage / 3;
+            }
+        }
+        if (collision.tag == "DUMMY")
+        {
+            DUMMY d = collision.GetComponent<DUMMY>();
+            if (d != null)
+            {
+                d.takeDamage(damage);
+            }
         }
     }
 }
