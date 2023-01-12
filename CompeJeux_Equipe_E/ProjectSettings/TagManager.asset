@@ -7,6 +7,7 @@ TagManager:
   - Pelle
   - Faucille
   - Cisaille
+  - Tools
   layers:
   - Default
   - TransparentFX
