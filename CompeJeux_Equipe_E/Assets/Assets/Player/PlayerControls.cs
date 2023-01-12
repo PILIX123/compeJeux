@@ -61,4 +61,9 @@ public class PlayerControls : MonoBehaviour
     {
         canMove = true;
     }
+    public void SwordAttack()
+    {
+        LockMovement();
+
+    }
 }
