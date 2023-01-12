@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Tilemaps;
 public class PlayerControls : MonoBehaviour
 {
     bool canMove = true;
@@ -11,6 +12,9 @@ public class PlayerControls : MonoBehaviour
     public ShovelAttack shovelAttack;
     public ScytheAttack scytheAttack;
     public ShearsAttack shearsAttack;
+    public Tilemap tools;
+    Grid grid;
+    public string Tool = "";
 
     public ContactFilter2D movementFilter;
     List<RaycastHit2D> castCollision = new List<RaycastHit2D>();
@@ -21,6 +25,8 @@ public class PlayerControls : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        grid = FindObjectOfType<Grid>();
+        tools = GameObject.FindGameObjectWithTag("Tools").GetComponent<Tilemap>();
     }
 
     private void FixedUpdate()
@@ -45,7 +51,7 @@ public class PlayerControls : MonoBehaviour
 
         if (count == 0)
         {
-            rb.MovePosition(rb.position + movementInput * moveSpeed * Time.fixedDeltaTime);
+            rb.MovePosition(rb.position + moveSpeed * Time.fixedDeltaTime * movementInput);
             return true;
         }
         return false;
@@ -70,5 +76,15 @@ public class PlayerControls : MonoBehaviour
     {
         LockMovement();
 
+    }
+    void OnSelectPlant()
+    {
+
+    }
+    void OnPickUp()
+    {
+        Vector3 playerPos = new Vector3(transform.position.x, transform.position.y);
+        Vector3Int cellpos = grid.WorldToCell(playerPos);
+        TileBase anythong = tools.GetTile(cellpos);
     }
 }
