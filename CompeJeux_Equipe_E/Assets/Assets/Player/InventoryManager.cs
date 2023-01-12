@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class f : MonoBehaviour
+public class InventoryManager : MonoBehaviour
 {
+    public Dictionary<string,int> inventory = new Dictionary<string,int>();
     // Start is called before the first frame update
     void Start()
     {
@@ -15,4 +16,9 @@ public class f : MonoBehaviour
     {
         
     }
+    void OnPlant()
+    {
+
+    }
+    void OnSelectPlant()
 }
