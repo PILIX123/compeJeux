@@ -8,7 +8,8 @@ public class PlayerControls : MonoBehaviour
     bool canMove = true;
     public float moveSpeed = 1f;
     public float collisionOffset = 0;
-
+    public Animator animator;
+    SpriteRenderer spriteRenderer;
     public ShovelAttack shovelAttack;
     public ScytheAttack scytheAttack;
     public ShearsAttack shearsAttack;
@@ -27,6 +28,8 @@ public class PlayerControls : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         grid = FindObjectOfType<Grid>();
         tools = GameObject.FindGameObjectWithTag("Tools").GetComponent<Tilemap>();
+        animator= GetComponent<Animator>();
+        spriteRenderer= GetComponent<SpriteRenderer>();
     }
 
     private void FixedUpdate()
@@ -38,7 +41,17 @@ public class PlayerControls : MonoBehaviour
                 if (!TryMove(movementInput))
                     if (!TryMove(new Vector2(movementInput.x, 0)))
                         TryMove(new Vector2(0, movementInput.y));
+                animator.SetBool("isMoving", true);
+            } else
+            {
+                animator.SetBool("isMoving", false);
             }
+
+            if (movementInput.x < 0)
+                spriteRenderer.flipX = true;
+            else if (movementInput.x > 0)
+                spriteRenderer.flipX = false;
+
         }
     }
     private bool TryMove(Vector2 direction)
