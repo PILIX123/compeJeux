@@ -7,6 +7,11 @@ public class PlayerControls : MonoBehaviour
     bool canMove;
     public float moveSpeed = 1f;
     public float collisionOffset = 0.05f;
+
+    public ShovelAttack shovelAttack;
+    public ScytheAttack scytheAttack;
+    public ShearsAttack shearsAttack;
+
     public ContactFilter2D movementFilter;
     List<RaycastHit2D> castCollision = new List<RaycastHit2D>();
 

@@ -314,6 +314,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 1
   collisionOffset: 0.05
+  shovelAttack: {fileID: 6153995161895676529}
+  scytheAttack: {fileID: 5494114861959444357}
+  shearsAttack: {fileID: 4665691945311807560}
   movementFilter:
     useTriggers: 0
     useLayerMask: 0
