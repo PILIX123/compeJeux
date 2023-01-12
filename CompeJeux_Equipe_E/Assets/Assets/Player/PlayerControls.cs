@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class PlayerControls : MonoBehaviour
 {
-    bool canMove;
+    bool canMove = true;
     public float moveSpeed = 1f;
     public float collisionOffset = 0.05f;
 
