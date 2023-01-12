@@ -9,6 +9,7 @@ public class ShovelAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        shovelCollider = GetComponent<Collider2D>();
         rightAttackOffset= transform.localPosition;
     }
     public void AttackRight()
