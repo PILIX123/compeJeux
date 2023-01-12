@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -6,6 +5,7 @@ using UnityEngine.Tilemaps;
 public class PlayerControls : MonoBehaviour
 {
     bool canMove = true;
+    bool canDash = true;
     public float moveSpeed = 1f;
     public float collisionOffset = 0;
     public Animator animator;
@@ -70,6 +70,19 @@ public class PlayerControls : MonoBehaviour
     void OnMove(InputValue movementValue)
     {
         movementInput = movementValue.Get<Vector2>();
+    }
+    void OnDash()
+    {
+        if (canDash) {
+            canDash = false;
+            animator.SetTrigger("isDash");
+            moveSpeed= 2f;
+        }
+    }
+    void StopDash()
+    {
+        moveSpeed = 1f;
+        canDash = true;
     }
     public void LockMovement()
     {
