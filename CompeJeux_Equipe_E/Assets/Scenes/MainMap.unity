@@ -36671,6 +36671,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -4756068112770282188, guid: baa927f8ee606394dafadfce1c07943b, type: 3}
+      propertyPath: grow
+      value: 
+      objectReference: {fileID: 11400000, guid: 34033e28c2811a742a8c58684df4acc6, type: 2}
     - target: {fileID: 575318574997336965, guid: baa927f8ee606394dafadfce1c07943b, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
       value: 0.95666665
@@ -36762,7 +36766,7 @@ GameObject:
   - component: {fileID: 682985259}
   m_Layer: 0
   m_Name: Dirt
-  m_TagString: Untagged
+  m_TagString: Dirt
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
