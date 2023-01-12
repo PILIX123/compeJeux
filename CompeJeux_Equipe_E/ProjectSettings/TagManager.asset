@@ -8,6 +8,10 @@ TagManager:
   - Faucille
   - Cisaille
   - Tools
+  - Play
+  - Quit
+  - Settings
+  - Dirt
   layers:
   - Default
   - TransparentFX

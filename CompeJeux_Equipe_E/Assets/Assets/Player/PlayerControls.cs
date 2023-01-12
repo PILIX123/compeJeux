@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -6,6 +5,7 @@ using UnityEngine.Tilemaps;
 public class PlayerControls : MonoBehaviour
 {
     bool canMove = true;
+    bool canDash = true;
     public float moveSpeed = 1f;
     public float collisionOffset = 0;
     public Animator animator;
@@ -46,12 +46,10 @@ public class PlayerControls : MonoBehaviour
             {
                 animator.SetBool("isMoving", false);
             }
-
             if (movementInput.x < 0)
                 spriteRenderer.flipX = true;
             else if (movementInput.x > 0)
                 spriteRenderer.flipX = false;
-
         }
     }
     private bool TryMove(Vector2 direction)
@@ -73,6 +71,19 @@ public class PlayerControls : MonoBehaviour
     {
         movementInput = movementValue.Get<Vector2>();
     }
+    void OnDash()
+    {
+        if (canDash) {
+            canDash = false;
+            moveSpeed= 2f;
+            animator.SetTrigger("isDashing");
+        }
+    }
+    void StopDash()
+    {
+        moveSpeed = 1f;
+        canDash = true;
+    }
     public void LockMovement()
     {
         canMove = false;
@@ -80,11 +91,6 @@ public class PlayerControls : MonoBehaviour
     public void UnlockMovement()
     {
         canMove = true;
-    }
-    public void SwordAttack()
-    {
-        LockMovement();
-
     }
     void OnSelectPlant()
     {
@@ -95,6 +101,8 @@ public class PlayerControls : MonoBehaviour
         Vector3 playerPos = new Vector3(transform.position.x, transform.position.y);
         Vector3Int cellpos = grid.WorldToCell(playerPos);
         TileBase tile = tools.GetTile(cellpos);
+        if (tile == null)
+            return;
         if (tile.name == "farming-tileset_104")
             Tool = "Scythe";
         if (tile.name == "farming-tileset_105")
@@ -105,25 +113,56 @@ public class PlayerControls : MonoBehaviour
     void OnFire()
     {
         if (Tool == "Scythe")
-            ScytheAttack();
+        {
+            animator.SetTrigger("hasScythe");
+        }
         if (Tool == "Shovel")
-            ShovelAttack();
+        {
+            animator.SetTrigger("hasShovel");
+        }
         if (Tool == "Shears")
-            ShearsAttack();
+        {
+            animator.SetTrigger("hasShears");
+        }
     }
     void ScytheAttack()
     {
-        scytheAttack.AttackLeft();
-        print("scythe");
+        if(spriteRenderer.flipX == true)
+        {
+            scytheAttack.AttackLeft();
+        }
+        else
+        {
+            scytheAttack.AttackRight();
+        }
+    }
+    void StopAttack()
+    {
+        scytheAttack.StopAttack();
+        shovelAttack.StopAttack();
+        shearsAttack.StopAttack();
     }
     void ShovelAttack()
     {
-        shovelAttack.AttackLeft();
-        print("Shovel");
+        if (spriteRenderer.flipX == true)
+        {
+            shovelAttack.AttackLeft();
+        }
+        else
+        {
+            shovelAttack.AttackRight();
+        }
+        
     }
     void ShearsAttack()
     {
-        shearsAttack.AttackLeft();
-        print("shears");
+        if (spriteRenderer.flipX == true)
+        {
+            shearsAttack.AttackLeft();
+        }
+        else
+        {
+            shearsAttack.AttackRight();
+        }
     }
 }
