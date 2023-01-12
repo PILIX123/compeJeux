@@ -6,7 +6,7 @@ public class PlayerControls : MonoBehaviour
 {
     bool canMove = true;
     public float moveSpeed = 1f;
-    public float collisionOffset = 0.05f;
+    public float collisionOffset = 0;
 
     public ShovelAttack shovelAttack;
     public ScytheAttack scytheAttack;
