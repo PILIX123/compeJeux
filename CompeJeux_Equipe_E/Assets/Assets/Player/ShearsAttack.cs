@@ -4,26 +4,27 @@ using UnityEngine;
 
 public class ShearsAttack : MonoBehaviour
 {
-    public Collider2D shovelCollider;
+    public Collider2D shearsCollider;
     Vector2 rightAttackOffset;
     // Start is called before the first frame update
     void Start()
     {
+        shearsCollider = GetComponent<Collider2D>();
         rightAttackOffset = transform.localPosition;
     }
     public void AttackRight()
     {
-        shovelCollider.enabled = true;
+        shearsCollider.enabled = true;
         transform.localPosition = rightAttackOffset;
     }
     public void AttackLeft()
     {
-        shovelCollider.enabled = true;
+        shearsCollider.enabled = true;
         transform.localPosition = new Vector2(rightAttackOffset.x * -1, rightAttackOffset.y);
     }
     public void StopAttack()
     {
-        shovelCollider.enabled = false;
+        shearsCollider.enabled = false;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
