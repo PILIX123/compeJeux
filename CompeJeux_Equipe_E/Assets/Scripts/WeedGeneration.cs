@@ -37,7 +37,6 @@ public class WeedGeneration : MonoBehaviour
                 int index = Random.Range(0, 3);
                 GameObject weed = Instantiate(weedAssets[index], new Vector3(pos.x * 0.32f - 9.44f, pos.y * 0.32f - 9.44f, 0f), Quaternion.identity);
                 weed.GetComponent<ClearSpawnMap>().spawnMapLocation = pos;
-                weed.GetComponent<ClearSpawnMap>().spawnMap = spawnMap;
                 if (index == 0)
                     spawnMap.SetPixel(pos.x, pos.y, Color.red);
                 if (index == 1)
@@ -66,21 +65,24 @@ public class WeedGeneration : MonoBehaviour
                 {
                     if (color == Color.red)
                     {
-                        Instantiate(weedAssets[0], new Vector3(pos.x * 0.32f - 9.6f, pos.y * 0.32f - 9.6f, 0f), Quaternion.identity);
+                        GameObject weed = Instantiate(weedAssets[0], new Vector3(pos.x * 0.32f - 9.6f, pos.y * 0.32f - 9.6f, 0f), Quaternion.identity);
+                        weed.GetComponent<ClearSpawnMap>().spawnMapLocation = pos;
                         spawnMap.SetPixel(pos.x, pos.y, Color.red);
                         cap = 499;
                         break;
                     }
                     if (color == Color.green)
                     {
-                        Instantiate(weedAssets[1], new Vector3(pos.x * 0.32f - 9.6f, pos.y * 0.32f - 9.6f, 0f), Quaternion.identity);
+                        GameObject weed = Instantiate(weedAssets[1], new Vector3(pos.x * 0.32f - 9.6f, pos.y * 0.32f - 9.6f, 0f), Quaternion.identity);
+                        weed.GetComponent<ClearSpawnMap>().spawnMapLocation = pos;
                         spawnMap.SetPixel(pos.x, pos.y, Color.green);
                         cap = 499;
                         break;
                     }
                     if (color == Color.blue)
                     {
-                        Instantiate(weedAssets[2], new Vector3(pos.x * 0.32f - 9.6f, pos.y * 0.32f - 9.6f, 0f), Quaternion.identity);
+                        GameObject weed = Instantiate(weedAssets[2], new Vector3(pos.x * 0.32f - 9.6f, pos.y * 0.32f - 9.6f, 0f), Quaternion.identity);
+                        weed.GetComponent<ClearSpawnMap>().spawnMapLocation = pos;
                         spawnMap.SetPixel(pos.x, pos.y, Color.blue);
                         cap = 499;
                         break;
