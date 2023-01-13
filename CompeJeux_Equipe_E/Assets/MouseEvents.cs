@@ -7,8 +7,7 @@ using UnityEngine.UI;
 
 public class MouseEvents : MonoBehaviour
 {
-    public Sprite SwitchOff, SwitchOn, CheckOff, CheckOn;
-    public Sprite FlowerBlue, FlowerGreen, FlowerPurple;
+    public Sprite SwitchOff, SwitchOn, CheckOff, CheckOn, FlowerBlue, FlowerGreen, FlowerPurple;
 
     private void Start()
     {
