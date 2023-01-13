@@ -53577,7 +53577,7 @@ MonoBehaviour:
   grid: {fileID: 2125749575}
   gameOverScreen: {fileID: 517735556}
   fatalEnemyCount: 20
-  life: 1
+  life: 100
 --- !u!212 &2016058336
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -7,8 +7,8 @@ public class gameManager : MonoBehaviour
     public static gameManager instance;
 
     public bool skip { get; set; }
-    public bool colour { get; set; }
     public bool paused { get; set; }
+    public int colour { get; set; }
 
     private void Awake()
     {
