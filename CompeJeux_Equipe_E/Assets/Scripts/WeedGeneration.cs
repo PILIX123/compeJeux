@@ -10,6 +10,7 @@ public class WeedGeneration : MonoBehaviour
     public GameObject[] weedAssets = new GameObject[3];
     public float secondsTilNewWeed = 5;
     public float secondsTilAdjacent = 1;
+    public float difficultyModifier = 0.04f;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,11 +21,14 @@ public class WeedGeneration : MonoBehaviour
         spawnMap.SetPixels(colors);
         InvokeRepeating("GenerateNewWeed", 1f, secondsTilNewWeed);
         InvokeRepeating("GenerateAdjacentWeed", 1f, secondsTilAdjacent);
+        InvokeRepeating("UpdateDifficulty", 1f, 1f);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (secondsTilNewWeed <= 20)
+            CancelInvoke();
     }
 
     void GenerateNewWeed()
@@ -90,5 +94,11 @@ public class WeedGeneration : MonoBehaviour
                 }
             }
         }
+    }
+
+    void UpdateDifficulty()
+    {
+        secondsTilNewWeed += difficultyModifier;
+        secondsTilAdjacent += difficultyModifier;
     }
 }

@@ -32,6 +32,7 @@ public class PlayerControls : MonoBehaviour
     Vector2 movementInput;
     Rigidbody2D rb;
     AudioSource audioSource;
+    public GameObject pauseMenu;
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +48,7 @@ public class PlayerControls : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            pauseMenu.SetActive(true);
             gameManager.instance.paused = !gameManager.instance.paused;
             PauseGame();
         }
