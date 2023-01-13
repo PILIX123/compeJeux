@@ -12,6 +12,7 @@ public class PlayerControls : MonoBehaviour
     public float collisionOffset = 0;
     public Animator animator;
     SpriteRenderer spriteRenderer;
+    public float damage = 3f;
     public ShovelAttack shovelAttack;
     public ScytheAttack scytheAttack;
     public ShearsAttack shearsAttack;
@@ -110,13 +111,13 @@ public class PlayerControls : MonoBehaviour
     {
         if (canDash) {
             canDash = false;
-            moveSpeed= 2f;
+            moveSpeed += 1f;
             animator.SetTrigger("isDashing");
         }
     }
     void StopDash()
     {
-        moveSpeed = 1f;
+        moveSpeed -= 1f;
         canDash = true;
     }
     public void LockMovement()
