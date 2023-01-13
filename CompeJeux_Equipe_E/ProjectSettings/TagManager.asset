@@ -16,6 +16,11 @@ TagManager:
   - Y
   - Z
   - DUMMY
+  - MenuFlower
+  - SwitchColor
+  - SwitchTuto
+  - MainCanvas
+  - OptionCanvas
   - Sussy
   layers:
   - Default
