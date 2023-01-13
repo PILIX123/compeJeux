@@ -12,7 +12,13 @@ public class MouseEvents : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log(gameManager.instance.colour);
+        if (Application.loadedLevelName == "OptionsMenu")
+            SwitchColor(gameManager.instance.colour);
+    }
+
+    private void Update()
+    {
+        Debug.Log(GameObject.FindGameObjectWithTag("MenuFlower").GetComponent<Animator>().GetInteger("FlowerColor"));
     }
 
     public void PlayGame()
@@ -52,17 +58,19 @@ public class MouseEvents : MonoBehaviour
         if (index == 0)
         {
             buttonbleu.GetComponent<Image>().sprite = CheckOn;
-            GameObject.FindGameObjectWithTag("MenuFlower").GetComponent<Image>().sprite = FlowerBlue;
+            GameObject.FindGameObjectWithTag("MenuFlower").GetComponent<ChangeFlowerColor>().ChangeColorAnim();
+            
         }
         if (index == 1)
         {
             buttonvert.GetComponent<Image>().sprite = CheckOn;
-            GameObject.FindGameObjectWithTag("MenuFlower").GetComponent<Image>().sprite = FlowerGreen;
+            GameObject.FindGameObjectWithTag("MenuFlower").GetComponent<ChangeFlowerColor>().ChangeColorAnim();
+            
         }
         if (index == 2)
         {
             buttonmauve.GetComponent<Image>().sprite = CheckOn;
-            GameObject.FindGameObjectWithTag("MenuFlower").GetComponent<Image>().sprite = FlowerPurple;
+            GameObject.FindGameObjectWithTag("MenuFlower").GetComponent<ChangeFlowerColor>().ChangeColorAnim();
         }
     }
     public void skipTuto()

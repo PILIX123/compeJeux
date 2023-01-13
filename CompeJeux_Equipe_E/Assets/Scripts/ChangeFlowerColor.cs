@@ -9,11 +9,23 @@ public class ChangeFlowerColor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (gameManager.instance.colour == 0)
-            GetComponent<SpriteRenderer>().sprite = Blue;
-        if (gameManager.instance.colour == 1)
-            GetComponent<SpriteRenderer>().sprite = Green;
-        if (gameManager.instance.colour == 2)
-            GetComponent<SpriteRenderer>().sprite = Purple;
+        if (GetComponent<Animator>() != null)
+            GetComponent<Animator>().SetInteger("FlowerColor", gameManager.instance.colour);
+
+        if (GetComponent<SpriteRenderer>() != null)
+        {
+            if (gameManager.instance.colour == 0)
+                GetComponent<SpriteRenderer>().sprite = Blue;
+            if (gameManager.instance.colour == 1)
+                GetComponent<SpriteRenderer>().sprite = Green;
+            if (gameManager.instance.colour == 2)
+                GetComponent<SpriteRenderer>().sprite = Purple;
+        }
+    }
+
+    public void ChangeColorAnim()
+    {
+        if (GetComponent<Animator>() != null)
+            GetComponent<Animator>().SetInteger("FlowerColor", gameManager.instance.colour);
     }
 }
