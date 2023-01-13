@@ -9967,8 +9967,8 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   shovelClip: {fileID: 8300000, guid: c32d26d0ef7aabb4aa1be5051dfa366d, type: 3}
-  shearsClip: {fileID: 8300000, guid: bb36a0f6c910dc04fa1f577cc81fc46b, type: 3}
-  scytheClip: {fileID: 8300000, guid: 274d869edb2c05940819f388188b866f, type: 3}
+  shearsClip: {fileID: 8300000, guid: af9b41302bdd5474c829565f141f7e8c, type: 3}
+  scytheClip: {fileID: 8300000, guid: 485d70e9dcc8d5b4591fcc7d67cf0fbf, type: 3}
   stepClip: {fileID: 8300000, guid: add1bff1010eab24b865d7b105f45df6, type: 3}
 --- !u!114 &1868164901896994815
 MonoBehaviour:
