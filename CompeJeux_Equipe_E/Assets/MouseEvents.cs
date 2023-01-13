@@ -16,13 +16,9 @@ public class MouseEvents : MonoBehaviour
             SwitchColor(gameManager.instance.colour);
     }
 
-    private void Update()
-    {
-        Debug.Log(GameObject.FindGameObjectWithTag("MenuFlower").GetComponent<Animator>().GetInteger("FlowerColor"));
-    }
-
     public void PlayGame()
     {
+        Time.timeScale = 1.0f;
         if (gameManager.instance.skip == true)
             SceneManager.LoadScene("MainMap");
         else
