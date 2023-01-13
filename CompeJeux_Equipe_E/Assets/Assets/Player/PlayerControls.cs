@@ -1,7 +1,9 @@
 using System.Collections.Generic;
+using System.Net.NetworkInformation;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Tilemaps;
+using UnityEngine.SceneManagement;
 public class PlayerControls : MonoBehaviour
 {
     bool canMove = true;
@@ -28,7 +30,8 @@ public class PlayerControls : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         grid = FindObjectOfType<Grid>();
         tools = GameObject.FindGameObjectWithTag("Tools").GetComponent<Tilemap>();
-        animator= GetComponent<Animator>();
+
+        animator = GetComponent<Animator>();
         spriteRenderer= GetComponent<SpriteRenderer>();
     }
 
