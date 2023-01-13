@@ -19,6 +19,7 @@ TagManager:
   - MenuFlower
   - SwitchColor
   - SwitchTuto
+  - DropLayer
   - MainCanvas
   - OptionCanvas
   layers:
