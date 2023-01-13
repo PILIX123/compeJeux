@@ -9,13 +9,12 @@ public class Hidden_Sussy : MonoBehaviour
     {
         
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void OnCollisionEnter2D(Collision2D collision)
+    {
+        transform.parent.GetComponent<Sussy_Achievement>().SussyCount++;
+        Destroy(gameObject);
+    }
+    public void CollectSussy()
     {
         transform.parent.GetComponent<Sussy_Achievement>().SussyCount++;
         Destroy(gameObject);

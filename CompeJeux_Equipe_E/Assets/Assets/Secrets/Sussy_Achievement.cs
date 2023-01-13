@@ -14,7 +14,7 @@ public class Sussy_Achievement : MonoBehaviour
                 AchievementGet();
             }
         }
-        get { return SussyCount; }
+        get { return sussyCount; }
     }
     int sussyCount;
     void AchievementGet()
