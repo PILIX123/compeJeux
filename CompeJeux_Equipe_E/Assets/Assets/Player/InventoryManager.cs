@@ -14,7 +14,8 @@ public class InventoryManager : MonoBehaviour
     public Tile grow;
     public AudioClip seedsClip;
     AudioSource audioSource;
-
+    SpriteRenderer seedslot;
+    public Sprite Petunia, Althea, Tulip;
     public Tile None;
     Tilemap DropLayer;
     
@@ -26,6 +27,9 @@ public class InventoryManager : MonoBehaviour
         inventory.Add("Althea", 3);
         inventory.Add("Tulipe", 3);
         audioSource = GetComponent<AudioSource>();
+        seedslot = GameObject.FindGameObjectWithTag("seedslot").GetComponent<SpriteRenderer>();
+        seedslot.sprite = Petunia;
+        Selected = "Petunia";
     }
 
     // Update is called once per frame
@@ -51,11 +55,20 @@ public class InventoryManager : MonoBehaviour
         if(input.Get() == null)
             return;
         if ((float)input.Get() == 1)
+        {
             Selected = "Petunia";
+            seedslot.sprite = Petunia;
+        }
         if ((float)input.Get() == 2)
+        {
             Selected = "Althea";
+            seedslot.sprite = Althea;
+        }
         if ((float)input.Get() == 3)
+        {
             Selected = "Tulipe";
+            seedslot.sprite = Tulip;
+        }
     }
     void Planting(Vector3Int cellpos)
     {

@@ -9949,6 +9949,9 @@ MonoBehaviour:
   shovelAttack: {fileID: 6153995161895676529}
   scytheAttack: {fileID: 5494114861959444357}
   shearsAttack: {fileID: 4665691945311807560}
+  shovel: {fileID: 21300210, guid: 2700e06d970d112489ff23cfb58c3f78, type: 3}
+  shear: {fileID: 21300000, guid: ae907f0678898dc4bbe69aac52736801, type: 3}
+  scythe: {fileID: 21300208, guid: 2700e06d970d112489ff23cfb58c3f78, type: 3}
   tools: {fileID: 0}
   LeafParticles: {fileID: 285588699}
   Tool: 
@@ -10087,6 +10090,7 @@ MonoBehaviour:
   Selected: 
   grow: {fileID: 0}
   seedsClip: {fileID: 8300000, guid: 9522ad33d4bc1f84bac01c8e87af4a84, type: 3}
+  None: {fileID: 0}
 --- !u!82 &874861907337296319
 AudioSource:
   m_ObjectHideFlags: 0

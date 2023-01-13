@@ -9,7 +9,7 @@ public class PlayerControls : MonoBehaviour
     bool canMove = true, canDash = true;
     public float moveSpeed = 1f, collisionOffset = 0;
     public Animator animator;
-    SpriteRenderer spriteRenderer;
+    SpriteRenderer spriteRenderer, uislot, seedslot;
     public ShovelAttack shovelAttack;
     public ScytheAttack scytheAttack;
     public ShearsAttack shearsAttack;
@@ -24,7 +24,6 @@ public class PlayerControls : MonoBehaviour
     public AudioClip shearsClip;
     public AudioClip scytheClip;
     public AudioClip stepClip;
-    SpriteRenderer sr;
     Vector2 movementInput;
     Rigidbody2D rb;
     AudioSource audioSource;
@@ -35,7 +34,7 @@ public class PlayerControls : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         grid = FindObjectOfType<Grid>();
         tools = GameObject.FindGameObjectWithTag("Tools").GetComponent<Tilemap>();
-        sr = GameObject.FindGameObjectWithTag("uislot").GetComponent<SpriteRenderer>();
+        uislot = GameObject.FindGameObjectWithTag("uislot").GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         spriteRenderer= GetComponent<SpriteRenderer>();
     }
@@ -132,17 +131,17 @@ public class PlayerControls : MonoBehaviour
         if (tile.name == "farming-tileset_104")
         {
             Tool = "Scythe";
-            sr.sprite = scythe;
+            uislot.sprite = scythe;
         }
         if (tile.name == "farming-tileset_105")
         {
             Tool = "Shovel";
-            sr.sprite = shovel;
+            uislot.sprite = shovel;
         }
         if (tile.name == "shears")
         {
             Tool = "Shears";
-            sr.sprite = shear;
+            uislot.sprite = shear;
         }
     }
     void OnFire()
