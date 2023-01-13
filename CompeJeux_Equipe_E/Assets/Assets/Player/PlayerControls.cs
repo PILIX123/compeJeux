@@ -42,6 +42,25 @@ public class PlayerControls : MonoBehaviour
         animator = GetComponent<Animator>();
         spriteRenderer= GetComponent<SpriteRenderer>();
     }
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            gameManager.instance.paused = !gameManager.instance.paused;
+            PauseGame();
+        }
+    }
+    void PauseGame()
+    {
+        if (gameManager.instance.paused)
+        {
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            Time.timeScale = 1;
+        }
+    }
 
     private void FixedUpdate()
     {
