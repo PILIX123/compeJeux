@@ -88,4 +88,11 @@ public class MouseEvents : MonoBehaviour
         }
 
     }
+
+    public void BackToGame(GameObject pauseMenu)
+    {
+        Time.timeScale = 1;
+        gameManager.instance.paused = false;
+        pauseMenu.SetActive(false);
+    }
 }
