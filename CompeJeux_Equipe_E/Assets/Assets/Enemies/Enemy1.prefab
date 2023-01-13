@@ -123,9 +123,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grid: {fileID: 0}
   droplayer: {fileID: 0}
-  Seed1: {fileID: 11400000, guid: 74a4d9bbfaa49ab4bad17a7174595d4f, type: 2}
-  Seed2: {fileID: 11400000, guid: c8993183236529747a31aa17b766cfc3, type: 2}
-  Seed3: {fileID: 11400000, guid: 36743910281814a41a0e6f2a081faf11, type: 2}
+  PetuniaSeed: {fileID: 2905941767187290841, guid: bc150e5c8e089c2418285faa52a73b11, type: 3}
+  TulipSeed: {fileID: 9185316733572062724, guid: dfdbad8208f66b5419619dc93fa7c03d, type: 3}
+  AltheaSeed: {fileID: 6359715872187685480, guid: 5118f806baa2d1d47969cc628e6c720f, type: 3}
   health: 0
 --- !u!61 &-2893389846699598509
 BoxCollider2D:

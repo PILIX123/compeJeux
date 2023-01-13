@@ -5,20 +5,16 @@ using UnityEngine.Tilemaps;
 
 public class Enemy : MonoBehaviour
 {
-    public Grid grid;
-    public Tilemap droplayer;
-    public Tile Seed1;
-    public Tile Seed2;
-    public Tile Seed3;
+    public GameObject PetuniaSeed;
+    public GameObject TulipSeed;
+    public GameObject AltheaSeed;
     public float Health
     {
         set
         {
             health = value;
             if(health <= 0)
-            {
                 Defeated();
-            }
         }
         get { return health; }
     }
@@ -26,21 +22,17 @@ public class Enemy : MonoBehaviour
     public void Defeated()
     {
         Vector3 pos = transform.position;
-        Vector3Int cellPos = grid.WorldToCell(pos);
         float random = Random.Range(0, 100);
         if (random < 40)
-            droplayer.SetTile(cellPos, Seed1);
+            Instantiate(AltheaSeed, pos, new Quaternion());
         if (40 < random && random < 85)
-            droplayer.SetTile(cellPos, Seed2);
+            Instantiate(TulipSeed, pos, new Quaternion());
         if (85 < random)
-            droplayer.SetTile(cellPos, Seed3);
+            Instantiate(PetuniaSeed, pos,new Quaternion());
         Destroy(gameObject);
     }
     public void Start()
     {
-        grid = FindObjectOfType<Grid>();
-        droplayer = GameObject.FindGameObjectWithTag("DropLayer").GetComponent<Tilemap>();
-       
         health = Random.Range(5, 16);
     }
 }

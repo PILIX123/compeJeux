@@ -12,6 +12,8 @@ public class InventoryManager : MonoBehaviour
     Tilemap dirt;
     Grid grid;
     public Tile grow;
+    public Tile None;
+    Tilemap DropLayer;
     
     // Start is called before the first frame update
     void Start()
@@ -29,8 +31,7 @@ public class InventoryManager : MonoBehaviour
     }
     void OnPlant()
     {
-        Vector3 playerPos = new Vector3(transform.position.x, transform.position.y);
-        Vector3Int cellpos = grid.WorldToCell(playerPos);
+        Vector3Int cellpos = posToGrid();
         TileBase tile = dirt.GetTile(cellpos);
         if (tile == null)
             return;
@@ -58,12 +59,24 @@ public class InventoryManager : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (gameObject.name == "farming-tileset_78")
-            inventory["Althea"] +=1;
-        if (gameObject.name == "farming-tileset_79")
-            inventory["Tulipe"] += 1;
-        if (gameObject.name == "farming-tileset_80")
-            inventory["Petunia"]+=1;
+        switch (collision.gameObject.name) {
+            case ("AthleaSeed(Clone)"):
+                inventory["Althea"] += 1;
+                break;
+            case ("TulipeSeed(Clone)"):
+                inventory["Tulipe"] += 1;
+                break;
+            case ("PetuniaSeed(Clone)"):
+                inventory["Petunia"] += 1;
+                break;
+            default:
+                return;
+        }
         Destroy(collision.gameObject);
+     }
+    Vector3Int posToGrid()
+    {
+        Vector3 playerPos = new Vector3(transform.position.x, transform.position.y);
+        return grid.WorldToCell(playerPos);
     }
 }
