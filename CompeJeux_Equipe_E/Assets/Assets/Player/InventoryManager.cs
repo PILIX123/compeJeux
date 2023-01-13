@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Tilemaps;
+using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -16,7 +18,7 @@ public class InventoryManager : MonoBehaviour
     AudioSource audioSource;
     SpriteRenderer seedslot;
     public Sprite Petunia, Althea, Tulip;
-
+    public TextMeshProUGUI seedNb;
     public GameObject BoostFlowerBlue;
     public GameObject BoostFlowerRed;
     public GameObject BoostFlowerPurple;
@@ -34,7 +36,9 @@ public class InventoryManager : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         seedslot = GameObject.FindGameObjectWithTag("seedslot").GetComponent<SpriteRenderer>();
         seedslot.sprite = Petunia;
+        seedNb = GameObject.FindGameObjectWithTag("seedslottxt").GetComponent<TextMeshProUGUI>();
         Selected = "Petunia";
+        seedNb.text = "3";
     }
 
     // Update is called once per frame
@@ -62,16 +66,19 @@ public class InventoryManager : MonoBehaviour
         {
             Selected = "Petunia";
             seedslot.sprite = Petunia;
+            seedNb.text = inventory["Petunia"].ToString();
         }
         if ((float)input.Get() == 2)
         {
             Selected = "Althea";
             seedslot.sprite = Althea;
+            seedNb.text = inventory["Althea"].ToString();
         }
         if ((float)input.Get() == 3)
         {
             Selected = "Tulipe";
             seedslot.sprite = Tulip;
+            seedNb.text = inventory["Tulipe"].ToString();
         }
     }
     void Planting(Vector3Int cellpos)
@@ -97,12 +104,16 @@ public class InventoryManager : MonoBehaviour
         switch (collision.gameObject.name) {
             case ("AltheaSeed(Clone)"):
                 inventory["Althea"] += 1;
+                seedNb.text = inventory["Althea"].ToString();
+
                 break;
             case ("TulipeSeed(Clone)"):
                 inventory["Tulipe"] += 1;
+                seedNb.text = inventory["Tulipe"].ToString();
                 break;
             case ("PetuniaSeed(Clone)"):
                 inventory["Petunia"] += 1;
+                seedNb.text = inventory["Petunia"].ToString();
                 break;
             default:
                 return;
