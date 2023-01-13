@@ -15,12 +15,9 @@ public class MouseEvents : MonoBehaviour
             SwitchColor(gameManager.instance.colour);
     }
 
-    private void Update()
-    {
-    }
-
     public void PlayGame()
     {
+        Time.timeScale = 1.0f;
         if (gameManager.instance.skip == true)
             SceneManager.LoadScene("MainMap");
         else
