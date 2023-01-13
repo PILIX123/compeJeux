@@ -12,7 +12,9 @@ public class InventoryManager : MonoBehaviour
     Tilemap dirt;
     Grid grid;
     public Tile grow;
-    
+    public AudioClip seedsClip;
+    AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {   grid = FindObjectOfType<Grid>();
@@ -20,6 +22,7 @@ public class InventoryManager : MonoBehaviour
         inventory.Add("Petunia", 3);
         inventory.Add("Jonquiere", 3);
         inventory.Add("Tulipe", 3);
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -38,7 +41,8 @@ public class InventoryManager : MonoBehaviour
             return;
         inventory.TryGetValue(Selected, out int number);
         if (number >= 3)
-            Planting(cellpos);        
+            Planting(cellpos);
+        audioSource.PlayOneShot(seedsClip);
     }
     void OnSelectPlant(InputValue input) 
     {
