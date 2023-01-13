@@ -510,6 +510,7 @@ GameObject:
   - component: {fileID: 511170419}
   - component: {fileID: 511170418}
   - component: {fileID: 511170417}
+  - component: {fileID: 511170420}
   m_Layer: 5
   m_Name: Flower
   m_TagString: MenuFlower
@@ -595,6 +596,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 511170415}
   m_CullTransparentMesh: 1
+--- !u!114 &511170420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 511170415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df9c529db9c42974b910bd2a2bec9900, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Blue: {fileID: 0}
+  Green: {fileID: 0}
+  Purple: {fileID: 0}
 --- !u!1 &655221589
 GameObject:
   m_ObjectHideFlags: 0
@@ -1061,6 +1077,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SwitchOff: {fileID: 21300000, guid: 02bcab56d72f63241b77ebd2da31e7f7, type: 3}
   SwitchOn: {fileID: 21300000, guid: f1eee2c05e8a26b4dab34409b867c2d8, type: 3}
+  CheckOff: {fileID: 21300000, guid: 2a529c4334622ab4ba24197a3b94c132, type: 3}
+  CheckOn: {fileID: 21300000, guid: 7764edc5c7ac9174c8d8f0fcf3fda335, type: 3}
+  FlowerBlue: {fileID: 21300000, guid: 7d0c7fcfaf380494bb82d4f109c25ff9, type: 3}
+  FlowerGreen: {fileID: 21300000, guid: 06aca58b05c39c54d95a4a642df20a09, type: 3}
+  FlowerPurple: {fileID: 21300000, guid: b0860ec61b8d82e48b43a6b9007fee09, type: 3}
 --- !u!1 &1877410533
 GameObject:
   m_ObjectHideFlags: 0

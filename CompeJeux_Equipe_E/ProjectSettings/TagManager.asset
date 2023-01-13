@@ -23,6 +23,9 @@ TagManager:
   - MainCanvas
   - OptionCanvas
   - Sussy
+  - bleu
+  - vert
+  - mauve
   layers:
   - Default
   - TransparentFX

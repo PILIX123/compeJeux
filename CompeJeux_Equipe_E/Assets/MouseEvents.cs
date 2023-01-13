@@ -7,15 +7,18 @@ using UnityEngine.UI;
 
 public class MouseEvents : MonoBehaviour
 {
-    public Sprite SwitchOff, SwitchOn;
+    public Sprite SwitchOff, SwitchOn, CheckOff, CheckOn;
+    public Sprite FlowerBlue, FlowerGreen, FlowerPurple;
 
     private void Start()
     {
-        Debug.Log(gameManager.instance.colour);
+        if (Application.loadedLevelName == "OptionsMenu")
+            SwitchColor(gameManager.instance.colour);
     }
 
     public void PlayGame()
     {
+        Time.timeScale = 1.0f;
         if (gameManager.instance.skip == true)
             SceneManager.LoadScene("MainMap");
         else
@@ -38,18 +41,32 @@ public class MouseEvents : MonoBehaviour
             SceneManager.LoadScene("MainMenu");
 
     }
-    public void switchCouleurOn()
+    public void SwitchColor(int index)
     {
-        Button button = GameObject.FindGameObjectWithTag("SwitchColor").GetComponent<Button>();
-        if (gameManager.instance.colour == false)
+        gameManager.instance.colour = index;
+        Button buttonbleu = GameObject.FindGameObjectWithTag("bleu").GetComponent<Button>();
+        Button buttonvert = GameObject.FindGameObjectWithTag("vert").GetComponent<Button>();
+        Button buttonmauve = GameObject.FindGameObjectWithTag("mauve").GetComponent<Button>();
+        buttonbleu.GetComponent<Image>().sprite = CheckOff;
+        buttonvert.GetComponent<Image>().sprite = CheckOff;
+        buttonmauve.GetComponent<Image>().sprite = CheckOff;
+
+        if (index == 0)
         {
-            button.GetComponent<Image>().sprite = SwitchOn;
-            gameManager.instance.colour = true;
+            buttonbleu.GetComponent<Image>().sprite = CheckOn;
+            GameObject.FindGameObjectWithTag("MenuFlower").GetComponent<ChangeFlowerColor>().ChangeColorAnim();
+            
         }
-        else
+        if (index == 1)
         {
-            button.GetComponent<Image>().sprite = SwitchOff;
-            gameManager.instance.colour = false;
+            buttonvert.GetComponent<Image>().sprite = CheckOn;
+            GameObject.FindGameObjectWithTag("MenuFlower").GetComponent<ChangeFlowerColor>().ChangeColorAnim();
+            
+        }
+        if (index == 2)
+        {
+            buttonmauve.GetComponent<Image>().sprite = CheckOn;
+            GameObject.FindGameObjectWithTag("MenuFlower").GetComponent<ChangeFlowerColor>().ChangeColorAnim();
         }
     }
     public void skipTuto()
@@ -66,5 +83,12 @@ public class MouseEvents : MonoBehaviour
             gameManager.instance.skip = false;
         }
 
+    }
+
+    public void BackToGame(GameObject pauseMenu)
+    {
+        Time.timeScale = 1;
+        gameManager.instance.paused = false;
+        pauseMenu.SetActive(false);
     }
 }

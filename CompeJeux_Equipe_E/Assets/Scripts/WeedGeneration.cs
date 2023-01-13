@@ -10,6 +10,7 @@ public class WeedGeneration : MonoBehaviour
     public GameObject[] weedAssets = new GameObject[3];
     public float secondsTilNewWeed = 5;
     public float secondsTilAdjacent = 1;
+    public float difficultyModifier = 0.04f;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,11 +21,14 @@ public class WeedGeneration : MonoBehaviour
         spawnMap.SetPixels(colors);
         InvokeRepeating("GenerateNewWeed", 1f, secondsTilNewWeed);
         InvokeRepeating("GenerateAdjacentWeed", 1f, secondsTilAdjacent);
+        InvokeRepeating("UpdateDifficulty", 1f, 1f);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (secondsTilNewWeed <= 20)
+            CancelInvoke();
     }
 
     void GenerateNewWeed()
@@ -65,7 +69,7 @@ public class WeedGeneration : MonoBehaviour
                 {
                     if (color == Color.red)
                     {
-                        GameObject weed = Instantiate(weedAssets[0], new Vector3(pos.x * 0.32f - 9.6f, pos.y * 0.32f - 9.6f, 0f), Quaternion.identity);
+                        GameObject weed = Instantiate(weedAssets[0], new Vector3(pos.x * 0.32f - 9.44f, pos.y * 0.32f - 9.44f, 0f), Quaternion.identity);
                         weed.GetComponent<ClearSpawnMap>().spawnMapLocation = pos;
                         spawnMap.SetPixel(pos.x, pos.y, Color.red);
                         cap = 499;
@@ -73,7 +77,7 @@ public class WeedGeneration : MonoBehaviour
                     }
                     if (color == Color.green)
                     {
-                        GameObject weed = Instantiate(weedAssets[1], new Vector3(pos.x * 0.32f - 9.6f, pos.y * 0.32f - 9.6f, 0f), Quaternion.identity);
+                        GameObject weed = Instantiate(weedAssets[1], new Vector3(pos.x * 0.32f - 9.44f, pos.y * 0.32f - 9.44f, 0f), Quaternion.identity);
                         weed.GetComponent<ClearSpawnMap>().spawnMapLocation = pos;
                         spawnMap.SetPixel(pos.x, pos.y, Color.green);
                         cap = 499;
@@ -81,7 +85,7 @@ public class WeedGeneration : MonoBehaviour
                     }
                     if (color == Color.blue)
                     {
-                        GameObject weed = Instantiate(weedAssets[2], new Vector3(pos.x * 0.32f - 9.6f, pos.y * 0.32f - 9.6f, 0f), Quaternion.identity);
+                        GameObject weed = Instantiate(weedAssets[2], new Vector3(pos.x * 0.32f - 9.44f, pos.y * 0.32f - 9.44f, 0f), Quaternion.identity);
                         weed.GetComponent<ClearSpawnMap>().spawnMapLocation = pos;
                         spawnMap.SetPixel(pos.x, pos.y, Color.blue);
                         cap = 499;
@@ -90,5 +94,11 @@ public class WeedGeneration : MonoBehaviour
                 }
             }
         }
+    }
+
+    void UpdateDifficulty()
+    {
+        secondsTilNewWeed += difficultyModifier;
+        secondsTilAdjacent += difficultyModifier;
     }
 }

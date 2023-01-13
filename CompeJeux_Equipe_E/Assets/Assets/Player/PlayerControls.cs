@@ -12,6 +12,7 @@ public class PlayerControls : MonoBehaviour
     public float collisionOffset = 0;
     public Animator animator;
     SpriteRenderer spriteRenderer;
+    public float damage = 3f;
     public ShovelAttack shovelAttack;
     public ScytheAttack scytheAttack;
     public ShearsAttack shearsAttack;
@@ -31,6 +32,7 @@ public class PlayerControls : MonoBehaviour
     Vector2 movementInput;
     Rigidbody2D rb;
     AudioSource audioSource;
+    public GameObject pauseMenu;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +48,7 @@ public class PlayerControls : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            pauseMenu.SetActive(true);
             gameManager.instance.paused = !gameManager.instance.paused;
             PauseGame();
         }
@@ -72,8 +75,6 @@ public class PlayerControls : MonoBehaviour
                     if (!TryMove(new Vector2(movementInput.x, 0)))
                         TryMove(new Vector2(0, movementInput.y));
                 animator.SetBool("isMoving", true);
-                if(!audioSource.isPlaying)
-                    audioSource.PlayOneShot(stepClip);
                 if(!LeafParticles.isPlaying)
                     LeafParticles.Play();
             } else
@@ -110,13 +111,13 @@ public class PlayerControls : MonoBehaviour
     {
         if (canDash) {
             canDash = false;
-            moveSpeed= 2f;
+            moveSpeed += 1f;
             animator.SetTrigger("isDashing");
         }
     }
     void StopDash()
     {
-        moveSpeed = 1f;
+        moveSpeed -= 1f;
         canDash = true;
     }
     public void LockMovement()
@@ -164,7 +165,6 @@ public class PlayerControls : MonoBehaviour
     }
     void ScytheAttack()
     {
-        audioSource.PlayOneShot(scytheClip);
         if(spriteRenderer.flipX == true)
         {
             scytheAttack.AttackLeft();
@@ -176,7 +176,6 @@ public class PlayerControls : MonoBehaviour
     }
     void ShovelAttack()
     {
-        audioSource.PlayOneShot(shovelClip);
         if (spriteRenderer.flipX == true)
         {
             shovelAttack.AttackLeft();
@@ -188,7 +187,6 @@ public class PlayerControls : MonoBehaviour
     }
     void ShearsAttack()
     {
-        ShearsSound();
         if (spriteRenderer.flipX == true)
         {
             shearsAttack.AttackLeft();
@@ -197,11 +195,26 @@ public class PlayerControls : MonoBehaviour
         {
             shearsAttack.AttackRight();
         }
-        Invoke("ShearsSound", 0.3f);
     }
+
+    void ShovelSound()
+    {
+        audioSource.PlayOneShot(shovelClip);
+    }
+
     void ShearsSound()
     {
         audioSource.PlayOneShot(shearsClip);
+    }
+
+    void ScytheSound()
+    {
+        audioSource.PlayOneShot(scytheClip);
+    }
+
+    void StepSound()
+    {
+        audioSource.PlayOneShot(stepClip);
     }
 
 }
