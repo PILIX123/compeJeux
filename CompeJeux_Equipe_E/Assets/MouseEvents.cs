@@ -7,11 +7,15 @@ using UnityEngine.UI;
 public class MouseEvents : MonoBehaviour
 {
     public Sprite SwitchOff, SwitchOn;
-    prefs prefs = new prefs();
+
+    private void Start()
+    {
+        Debug.Log(gameManager.instance.colour);
+    }
 
     public void PlayGame()
     {
-        if (prefs.skip == true)
+        if (gameManager.instance.skip == true)
             SceneManager.LoadScene("MainMap");
         else
             SceneManager.LoadScene("Tutorial");
@@ -23,38 +27,40 @@ public class MouseEvents : MonoBehaviour
     }
     public void ToOptions()
     {
-        SceneManager.LoadScene("OptionsMenu");
+            SceneManager.LoadScene("OptionsMenu");
+
     }
     public void BackToMain()
     {
-        SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene("MainMenu");
+
     }
     public void switchCouleurOn()
     {
         Button button = GameObject.FindGameObjectWithTag("SwitchColor").GetComponent<Button>();
-        if (prefs.colour == false)
+        if (gameManager.instance.colour == false)
         {
             button.GetComponent<Image>().sprite = SwitchOn;
-            prefs.colour = true;
+            gameManager.instance.colour = true;
         }
         else
         {
             button.GetComponent<Image>().sprite = SwitchOff;
-            prefs.colour = false;
+            gameManager.instance.colour = false;
         }
     }
     public void skipTuto()
     {
         Button button = GameObject.FindGameObjectWithTag("SwitchTuto").GetComponent<Button>();
-        if (prefs.skip == false)
+        if (gameManager.instance.skip == false)
         {
             button.GetComponent<Image>().sprite = SwitchOn;
-            prefs.skip = true;
+            gameManager.instance.skip = true;
         }
         else
         {
             button.GetComponent<Image>().sprite = SwitchOff;
-            prefs.skip = false;
+            gameManager.instance.skip = false;
         }
 
     }
