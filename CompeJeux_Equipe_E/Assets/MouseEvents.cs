@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -22,7 +23,9 @@ public class MouseEvents : MonoBehaviour
     }
     public void QuitGame()
     {
-        Debug.Log("Quit");
+#if DEBUG
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
         Application.Quit();
     }
     public void ToOptions()
