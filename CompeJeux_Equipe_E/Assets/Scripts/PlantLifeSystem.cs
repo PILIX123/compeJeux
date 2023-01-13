@@ -7,7 +7,7 @@ public class PlantLifeSystem : MonoBehaviour
     public GameObject grid;
     public GameObject gameOverScreen;
     public int fatalEnemyCount = 100;
-    public float life;
+    public float life = 100;
     private WeedGeneration generationSystem;
 
     // Start is called before the first frame update
@@ -21,7 +21,9 @@ public class PlantLifeSystem : MonoBehaviour
     void Update()
     {
         if (life <= 0)
+        {
             GameOver();
+        }
     }
 
     void UpdateLife()
