@@ -19,6 +19,7 @@ public class Hidden_Sussy : MonoBehaviour
     {
         if (!hit)
         {
+            hit = true;
             Trophy trophy = GetComponentInChildren<Trophy>();
             trophy.SetEnabled();
             transform.parent.GetComponent<Sussy_Achievement>().SussyCount++;

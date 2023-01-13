@@ -7,7 +7,7 @@ public class BoostFlowerRed : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("Grow", 60);
+        Invoke("Grow", 5);
     }
     void Grow()
     {

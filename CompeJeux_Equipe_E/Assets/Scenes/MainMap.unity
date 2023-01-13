@@ -48752,7 +48752,7 @@ PrefabInstance:
     - target: {fileID: 139127618977257532, guid: fc3ca8da7ec030c4b915fc7f4543e8c8, type: 3}
       propertyPath: canvasTrophy
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1505299543}
     - target: {fileID: 2856919021186105656, guid: fc3ca8da7ec030c4b915fc7f4543e8c8, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -49329,10 +49329,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grid: {fileID: 2125749575}
-  gameOverScreen: {fileID: 0}
-  timeTxt: {fileID: 0}
-  flowerTxt: {fileID: 0}
-  weedTxt: {fileID: 0}
+  gameOverScreen: {fileID: 1132057374}
+  timeTxt: {fileID: 333367822}
+  flowerTxt: {fileID: 1763968513}
+  weedTxt: {fileID: 1059517274}
   fatalEnemyCount: 20
   life: 100
   isGameOver: 0
@@ -49376,7 +49376,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 62
   m_Sprite: {fileID: 21300000, guid: 7d0c7fcfaf380494bb82d4f109c25ff9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

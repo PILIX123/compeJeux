@@ -56,5 +56,6 @@ public class PlantLifeSystem : MonoBehaviour
         timeTxt.text += levelManager.time;
         flowerTxt.text += levelManager.flowersPlanted;
         weedTxt.text += levelManager.weedsKilled;
+        Time.timeScale= 0;
     }
 }

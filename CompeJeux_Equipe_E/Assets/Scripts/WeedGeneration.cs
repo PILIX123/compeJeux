@@ -28,7 +28,7 @@ public class WeedGeneration : MonoBehaviour
     void Update()
     {
         if (secondsTilNewWeed <= 20)
-            CancelInvoke();
+            CancelInvoke("UpdateDifficulty");
     }
 
     void GenerateNewWeed()
