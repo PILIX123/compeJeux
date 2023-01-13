@@ -15,12 +15,15 @@ public class InventoryManager : MonoBehaviour
     public AudioClip seedsClip;
     AudioSource audioSource;
 
+    public Tile None;
+    Tilemap DropLayer;
+    
     // Start is called before the first frame update
     void Start()
     {   grid = FindObjectOfType<Grid>();
         dirt = GameObject.FindGameObjectWithTag("Dirt").GetComponent<Tilemap>();
         inventory.Add("Petunia", 3);
-        inventory.Add("Jonquiere", 3);
+        inventory.Add("Althea", 3);
         inventory.Add("Tulipe", 3);
         audioSource = GetComponent<AudioSource>();
     }
@@ -32,8 +35,7 @@ public class InventoryManager : MonoBehaviour
     }
     void OnPlant()
     {
-        Vector3 playerPos = new Vector3(transform.position.x, transform.position.y);
-        Vector3Int cellpos = grid.WorldToCell(playerPos);
+        Vector3Int cellpos = posToGrid();
         TileBase tile = dirt.GetTile(cellpos);
         if (tile == null)
             return;
@@ -51,7 +53,7 @@ public class InventoryManager : MonoBehaviour
         if ((float)input.Get() == 1)
             Selected = "Petunia";
         if ((float)input.Get() == 2)
-            Selected = "Jonquiere";
+            Selected = "Althea";
         if ((float)input.Get() == 3)
             Selected = "Tulipe";
     }
@@ -59,5 +61,27 @@ public class InventoryManager : MonoBehaviour
     {
         dirt.SetTile(cellpos, grow);
         inventory[Selected] = inventory[Selected] - 3;
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        switch (collision.gameObject.name) {
+            case ("AthleaSeed(Clone)"):
+                inventory["Althea"] += 1;
+                break;
+            case ("TulipeSeed(Clone)"):
+                inventory["Tulipe"] += 1;
+                break;
+            case ("PetuniaSeed(Clone)"):
+                inventory["Petunia"] += 1;
+                break;
+            default:
+                return;
+        }
+        Destroy(collision.gameObject);
+     }
+    Vector3Int posToGrid()
+    {
+        Vector3 playerPos = new Vector3(transform.position.x, transform.position.y);
+        return grid.WorldToCell(playerPos);
     }
 }

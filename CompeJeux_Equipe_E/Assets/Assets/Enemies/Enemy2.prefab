@@ -121,6 +121,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc7d706f3c4b7fc4ea4455b09dff90c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  grid: {fileID: 0}
+  droplayer: {fileID: 0}
+  PetuniaSeed: {fileID: 2905941767187290841, guid: bc150e5c8e089c2418285faa52a73b11, type: 3}
+  TulipSeed: {fileID: 9185316733572062724, guid: dfdbad8208f66b5419619dc93fa7c03d, type: 3}
+  AltheaSeed: {fileID: 6359715872187685480, guid: 5118f806baa2d1d47969cc628e6c720f, type: 3}
   health: 0
 --- !u!61 &-5580665878838253548
 BoxCollider2D:
@@ -161,4 +166,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnMapLocation: {x: 0, y: 0}
-  spawnMap: {fileID: 2800000, guid: 73a284091c7b0914ba89b79e0f14fe04, type: 3}
+  grid: {fileID: 0}
