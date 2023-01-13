@@ -72,8 +72,6 @@ public class PlayerControls : MonoBehaviour
                     if (!TryMove(new Vector2(movementInput.x, 0)))
                         TryMove(new Vector2(0, movementInput.y));
                 animator.SetBool("isMoving", true);
-                if(!audioSource.isPlaying)
-                    audioSource.PlayOneShot(stepClip);
                 if(!LeafParticles.isPlaying)
                     LeafParticles.Play();
             } else
@@ -168,7 +166,6 @@ public class PlayerControls : MonoBehaviour
     }
     void ScytheAttack()
     {
-        audioSource.PlayOneShot(scytheClip);
         if(spriteRenderer.flipX == true)
         {
             scytheAttack.AttackLeft();
@@ -180,7 +177,6 @@ public class PlayerControls : MonoBehaviour
     }
     void ShovelAttack()
     {
-        audioSource.PlayOneShot(shovelClip);
         if (spriteRenderer.flipX == true)
         {
             shovelAttack.AttackLeft();
@@ -192,7 +188,6 @@ public class PlayerControls : MonoBehaviour
     }
     void ShearsAttack()
     {
-        ShearsSound();
         if (spriteRenderer.flipX == true)
         {
             shearsAttack.AttackLeft();
@@ -201,11 +196,26 @@ public class PlayerControls : MonoBehaviour
         {
             shearsAttack.AttackRight();
         }
-        Invoke("ShearsSound", 0.3f);
     }
+
+    void ShovelSound()
+    {
+        audioSource.PlayOneShot(shovelClip);
+    }
+
     void ShearsSound()
     {
         audioSource.PlayOneShot(shearsClip);
+    }
+
+    void ScytheSound()
+    {
+        audioSource.PlayOneShot(scytheClip);
+    }
+
+    void StepSound()
+    {
+        audioSource.PlayOneShot(stepClip);
     }
 
 }
