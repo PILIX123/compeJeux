@@ -19,6 +19,8 @@ TagManager:
   - MenuFlower
   - SwitchColor
   - SwitchTuto
+  - MainCanvas
+  - OptionCanvas
   layers:
   - Default
   - TransparentFX
