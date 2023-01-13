@@ -14763,6 +14763,9 @@ MonoBehaviour:
   shovelAttack: {fileID: 6153995161895676529}
   scytheAttack: {fileID: 5494114861959444357}
   shearsAttack: {fileID: 4665691945311807560}
+  shovel: {fileID: 21300210, guid: 2700e06d970d112489ff23cfb58c3f78, type: 3}
+  shear: {fileID: 21300000, guid: ae907f0678898dc4bbe69aac52736801, type: 3}
+  scythe: {fileID: 21300208, guid: 2700e06d970d112489ff23cfb58c3f78, type: 3}
   tools: {fileID: 0}
   LeafParticles: {fileID: 285588699}
   Tool: 
@@ -14784,6 +14787,7 @@ MonoBehaviour:
   shearsClip: {fileID: 8300000, guid: af9b41302bdd5474c829565f141f7e8c, type: 3}
   scytheClip: {fileID: 8300000, guid: 485d70e9dcc8d5b4591fcc7d67cf0fbf, type: 3}
   stepClip: {fileID: 8300000, guid: add1bff1010eab24b865d7b105f45df6, type: 3}
+  pauseMenu: {fileID: 0}
 --- !u!114 &1868164901896994815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14901,6 +14905,9 @@ MonoBehaviour:
   Selected: 
   grow: {fileID: 11400000, guid: 34033e28c2811a742a8c58684df4acc6, type: 2}
   seedsClip: {fileID: 8300000, guid: 9522ad33d4bc1f84bac01c8e87af4a84, type: 3}
+  Petunia: {fileID: 21300000, guid: 299b1fceffbabaa4ba2ed49422ce0369, type: 3}
+  Althea: {fileID: 21300000, guid: bc17e80ca586f2d4a98ada93bc6a28e8, type: 3}
+  Tulip: {fileID: 21300000, guid: 4d414bbe90fa3a74791c78f31f5e61ed, type: 3}
   BoostFlowerBlue: {fileID: 6933128031891942438, guid: b68a494b58bf0824489f54a71588c2e6, type: 3}
   BoostFlowerRed: {fileID: 6933128031891942438, guid: 30048598d6f4b4d438906b7ace9339b0, type: 3}
   BoostFlowerPurple: {fileID: 6933128031891942438, guid: b23ef27e46f6c8f4cbe1bde91fe1f68c, type: 3}
