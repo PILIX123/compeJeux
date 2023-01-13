@@ -26,6 +26,7 @@ TagManager:
   - bleu
   - vert
   - mauve
+  - uislot
   layers:
   - Default
   - TransparentFX

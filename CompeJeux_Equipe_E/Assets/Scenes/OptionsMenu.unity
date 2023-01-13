@@ -563,8 +563,8 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 849.19995, y: 478}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
 --- !u!1 &871775152
 GameObject:
   m_ObjectHideFlags: 0
@@ -899,7 +899,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -317, y: -176}
+  m_AnchoredPosition: {x: -223.1, y: -188.8}
   m_SizeDelta: {x: 182.48, y: 184.47}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1106267407
@@ -1033,7 +1033,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000076294, y: -42}
+  m_AnchoredPosition: {x: 93.9, y: -54.8}
   m_SizeDelta: {x: 182.48, y: 184.47}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1201877889
@@ -1558,8 +1558,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 22.07, y: 21.1}
-  m_SizeDelta: {x: 725.15, y: 325.55}
+  m_AnchoredPosition: {x: -34.9, y: 33.9}
+  m_SizeDelta: {x: 800, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1851087483
 MonoBehaviour:
@@ -1580,7 +1580,6 @@ MonoBehaviour:
   FlowerBlue: {fileID: 21300000, guid: 7d0c7fcfaf380494bb82d4f109c25ff9, type: 3}
   FlowerGreen: {fileID: 21300000, guid: 06aca58b05c39c54d95a4a642df20a09, type: 3}
   FlowerPurple: {fileID: 21300000, guid: b0860ec61b8d82e48b43a6b9007fee09, type: 3}
-  Flower: {fileID: 511170415}
 --- !u!1 &1877410533
 GameObject:
   m_ObjectHideFlags: 0
