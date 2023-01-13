@@ -593,6 +593,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 1067360974442285889, guid: b1207abb69d25d94fae8cb6df261b2cf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Restart
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1207abb69d25d94fae8cb6df261b2cf, type: 3}
 --- !u!1 &333367820
@@ -37119,6 +37123,7 @@ GameObject:
   m_Component:
   - component: {fileID: 481670416}
   - component: {fileID: 481670417}
+  - component: {fileID: 481670418}
   m_Layer: 0
   m_Name: Level Manager
   m_TagString: Untagged
@@ -37156,6 +37161,102 @@ MonoBehaviour:
   time: 0
   flowersPlanted: 0
   weedsKilled: 0
+--- !u!82 &481670418
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481670414}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 45c0bcfa709f66f42827114d7be1dd68, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.3
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -39692,11 +39793,7 @@ PrefabInstance:
     - target: {fileID: -4756068112770282188, guid: baa927f8ee606394dafadfce1c07943b, type: 3}
       propertyPath: Tulip
       value: 
-      objectReference: {fileID: 21300000, guid: 4d414bbe90fa3a74791c78f31f5e61ed, type: 3}
-    - target: {fileID: -4756068112770282188, guid: baa927f8ee606394dafadfce1c07943b, type: 3}
-      propertyPath: Althea
-      value: 
-      objectReference: {fileID: 21300000, guid: bc17e80ca586f2d4a98ada93bc6a28e8, type: 3}
+      objectReference: {fileID: 21300000, guid: 299b1fceffbabaa4ba2ed49422ce0369, type: 3}
     - target: {fileID: -4756068112770282188, guid: baa927f8ee606394dafadfce1c07943b, type: 3}
       propertyPath: seedNb
       value: 
@@ -39704,19 +39801,7 @@ PrefabInstance:
     - target: {fileID: -4756068112770282188, guid: baa927f8ee606394dafadfce1c07943b, type: 3}
       propertyPath: Petunia
       value: 
-      objectReference: {fileID: 21300000, guid: 299b1fceffbabaa4ba2ed49422ce0369, type: 3}
-    - target: {fileID: -4756068112770282188, guid: baa927f8ee606394dafadfce1c07943b, type: 3}
-      propertyPath: TulipSeeds
-      value: 
-      objectReference: {fileID: 21300000, guid: e6b57f4d17632724d9df572e28804fca, type: 3}
-    - target: {fileID: -4756068112770282188, guid: baa927f8ee606394dafadfce1c07943b, type: 3}
-      propertyPath: AltheaSeeds
-      value: 
-      objectReference: {fileID: 21300000, guid: 9d9e63cafc647e34a8c990a83262ac8a, type: 3}
-    - target: {fileID: -4756068112770282188, guid: baa927f8ee606394dafadfce1c07943b, type: 3}
-      propertyPath: PetuniaSeeds
-      value: 
-      objectReference: {fileID: 21300000, guid: a5f0a039d3f94414bad359540ac44f0d, type: 3}
+      objectReference: {fileID: 21300000, guid: 4d414bbe90fa3a74791c78f31f5e61ed, type: 3}
     - target: {fileID: 2775919146409806670, guid: baa927f8ee606394dafadfce1c07943b, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -39762,25 +39847,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5262222210589287681, guid: baa927f8ee606394dafadfce1c07943b, type: 3}
-      propertyPath: shear
-      value: 
-      objectReference: {fileID: 21300000, guid: ae907f0678898dc4bbe69aac52736801, type: 3}
-    - target: {fileID: 5262222210589287681, guid: baa927f8ee606394dafadfce1c07943b, type: 3}
-      propertyPath: scythe
-      value: 
-      objectReference: {fileID: 21300208, guid: 2700e06d970d112489ff23cfb58c3f78, type: 3}
-    - target: {fileID: 5262222210589287681, guid: baa927f8ee606394dafadfce1c07943b, type: 3}
-      propertyPath: shovel
-      value: 
-      objectReference: {fileID: 21300210, guid: 2700e06d970d112489ff23cfb58c3f78, type: 3}
-    - target: {fileID: 5262222210589287681, guid: baa927f8ee606394dafadfce1c07943b, type: 3}
       propertyPath: pauseMenu
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7900419656040903116, guid: baa927f8ee606394dafadfce1c07943b, type: 3}
-      propertyPath: m_SortingOrder
-      value: 6
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1874848173}
     - target: {fileID: 9021761189158617210, guid: baa927f8ee606394dafadfce1c07943b, type: 3}
       propertyPath: m_Name
       value: Player
@@ -49032,6 +49101,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1874848173 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1067360974158298726, guid: b1207abb69d25d94fae8cb6df261b2cf, type: 3}
+  m_PrefabInstance: {fileID: 260376270}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1915497686
 GameObject:
   m_ObjectHideFlags: 0
@@ -50444,8 +50518,8 @@ MonoBehaviour:
   - {fileID: 6952015551784961934, guid: 4ba5e490d9bfbda4693afc3a69c1adb1, type: 3}
   - {fileID: 6952015551784961934, guid: 56548a7af2e08d84d99fc4b2840d735d, type: 3}
   - {fileID: 6952015551784961934, guid: 4a5e70ba60985c04dadf52f331836e53, type: 3}
-  secondsTilNewWeed: 30
-  secondsTilAdjacent: 10
+  secondsTilNewWeed: 20
+  secondsTilAdjacent: 8
   difficultyModifier: 0.04
 --- !u!1 &2131643585
 GameObject:

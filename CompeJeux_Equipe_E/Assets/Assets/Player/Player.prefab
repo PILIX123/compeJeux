@@ -14858,7 +14858,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 6
   m_Sprite: {fileID: 1310034058, guid: 9b7645dad342c5b4cbd5a5a7ae33ea1e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -14908,6 +14908,7 @@ MonoBehaviour:
   Petunia: {fileID: 21300000, guid: 299b1fceffbabaa4ba2ed49422ce0369, type: 3}
   Althea: {fileID: 21300000, guid: bc17e80ca586f2d4a98ada93bc6a28e8, type: 3}
   Tulip: {fileID: 21300000, guid: 4d414bbe90fa3a74791c78f31f5e61ed, type: 3}
+  seedNb: {fileID: 0}
   BoostFlowerBlue: {fileID: 6933128031891942438, guid: b68a494b58bf0824489f54a71588c2e6, type: 3}
   BoostFlowerRed: {fileID: 6933128031891942438, guid: 30048598d6f4b4d438906b7ace9339b0, type: 3}
   BoostFlowerPurple: {fileID: 6933128031891942438, guid: b23ef27e46f6c8f4cbe1bde91fe1f68c, type: 3}
