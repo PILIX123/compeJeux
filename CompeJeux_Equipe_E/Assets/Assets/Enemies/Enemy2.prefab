@@ -121,8 +121,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc7d706f3c4b7fc4ea4455b09dff90c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grid: {fileID: 0}
-  droplayer: {fileID: 0}
   PetuniaSeed: {fileID: 2905941767187290841, guid: bc150e5c8e089c2418285faa52a73b11, type: 3}
   TulipSeed: {fileID: 9185316733572062724, guid: dfdbad8208f66b5419619dc93fa7c03d, type: 3}
   AltheaSeed: {fileID: 6359715872187685480, guid: 5118f806baa2d1d47969cc628e6c720f, type: 3}
@@ -151,7 +149,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.26, y: 0.3}
+  m_Size: {x: 0.32, y: 0.32}
   m_EdgeRadius: 0
 --- !u!114 &5962223161040162068
 MonoBehaviour:
