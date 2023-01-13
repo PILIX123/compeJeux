@@ -21,6 +21,7 @@ public class InventoryManager : MonoBehaviour
 
     public Tile None;
     Tilemap DropLayer;
+    LevelManager levelManager;
     
     // Start is called before the first frame update
     void Start()
@@ -30,6 +31,7 @@ public class InventoryManager : MonoBehaviour
         inventory.Add("Althea", 3);
         inventory.Add("Tulipe", 3);
         audioSource = GetComponent<AudioSource>();
+        levelManager = GameObject.Find("Level Manager").GetComponent<LevelManager>();
     }
 
     // Update is called once per frame
@@ -62,6 +64,7 @@ public class InventoryManager : MonoBehaviour
     }
     void Planting(Vector3Int cellpos)
     {
+        levelManager.flowersPlanted++;
         audioSource.PlayOneShot(seedsClip);
         dirt.SetTile(cellpos, grow);
         inventory[Selected] = inventory[Selected] - 3;
