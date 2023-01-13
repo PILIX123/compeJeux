@@ -17,7 +17,6 @@ public class MouseEvents : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(GameObject.FindGameObjectWithTag("MenuFlower").GetComponent<Animator>().GetInteger("FlowerColor"));
     }
 
     public void PlayGame()
