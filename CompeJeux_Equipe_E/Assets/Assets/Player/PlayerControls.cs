@@ -125,10 +125,6 @@ public class PlayerControls : MonoBehaviour
     {
         canMove = true;
     }
-    void OnSelectPlant()
-    {
-
-    }
     void OnPickUp()
     {
         Vector3 playerPos = new Vector3(transform.position.x, transform.position.y);
