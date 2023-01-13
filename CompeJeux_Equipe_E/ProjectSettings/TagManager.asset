@@ -16,6 +16,9 @@ TagManager:
   - Y
   - Z
   - DUMMY
+  - MenuFlower
+  - SwitchColor
+  - SwitchTuto
   layers:
   - Default
   - TransparentFX
