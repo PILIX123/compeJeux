@@ -20,6 +20,8 @@ TagManager:
   - SwitchColor
   - SwitchTuto
   - DropLayer
+  - MainCanvas
+  - OptionCanvas
   layers:
   - Default
   - TransparentFX
