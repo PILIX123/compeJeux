@@ -6,7 +6,6 @@ public class ShovelAttack : MonoBehaviour
 {
     public Collider2D shovelCollider;
     Vector2 rightAttackOffset;
-    float damage = 5;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +27,7 @@ public class ShovelAttack : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        float damage = transform.parent.GetComponent<PlayerControls>().damage*2;
         //weak to tool
         if (collision.tag == "Z")
         {
