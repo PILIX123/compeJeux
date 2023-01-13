@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
     public GameObject TulipSeed;
     public GameObject AltheaSeed;
 
-    GameManager gameManager;
+    LevelManager levelManager;
     public float Health
     {
         set
@@ -23,7 +23,7 @@ public class Enemy : MonoBehaviour
     public float health;
     public void Defeated()
     {
-        gameManager.weedsKilled++;
+        levelManager.weedsKilled++;
         Vector3 pos = transform.position;
         float random = Random.Range(0, 100);
         if (random < 40)
@@ -36,7 +36,7 @@ public class Enemy : MonoBehaviour
     }
     public void Start()
     {
-        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        levelManager = GameObject.Find("Level Manager").GetComponent<LevelManager>();
         health = Random.Range(5, 16);
     }
 }
