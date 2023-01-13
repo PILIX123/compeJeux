@@ -93,12 +93,15 @@ public class InventoryManager : MonoBehaviour
         {
             case ("Petunia"):
                 Instantiate(BoostFlowerBlue, transform.position, transform.rotation);
+                seedNb.text = inventory["Petunia"].ToString();
                 break;
             case ("Althea"):
                 Instantiate(BoostFlowerRed, transform.position, transform.rotation);
+                seedNb.text = inventory["Althea"].ToString();
                 break;
             case ("Tulipe"):
                 Instantiate(BoostFlowerPurple, transform.position, transform.rotation);
+                seedNb.text = inventory["Tulipe"].ToString();
                 break;
         }
     }
