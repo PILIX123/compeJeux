@@ -58,6 +58,15 @@ public class ShearsAttack : MonoBehaviour
                 enemy.Health -= damage / 5;
             }
         }
+        if (collision.tag == "Sussy")
+        {
+            Hidden_Sussy sussy = collision.GetComponent<Hidden_Sussy>();
+
+            if (sussy != null)
+            {
+                sussy.CollectSussy();
+            }
+        }
         if (collision.tag == "DUMMY")
         {
             DUMMY d = collision.GetComponent<DUMMY>();
