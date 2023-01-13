@@ -42115,8 +42115,6 @@ GameObject:
   - component: {fileID: 453122700}
   - component: {fileID: 453122702}
   - component: {fileID: 453122701}
-  - component: {fileID: 453122703}
-  - component: {fileID: 453122704}
   m_Layer: 0
   m_Name: DropLayer
   m_TagString: DropLayer
@@ -42326,6 +42324,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SwitchOff: {fileID: 21300000, guid: 02bcab56d72f63241b77ebd2da31e7f7, type: 3}
   SwitchOn: {fileID: 21300000, guid: f1eee2c05e8a26b4dab34409b867c2d8, type: 3}
+  CheckOff: {fileID: 0}
+  CheckOn: {fileID: 0}
+  FlowerBlue: {fileID: 0}
+  FlowerGreen: {fileID: 0}
+  FlowerPurple: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -51622,7 +51625,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: d6d851a8e1cf2ab4aa7a054f0bb3ec74, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -51642,7 +51645,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1514543127}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.375, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -53555,8 +53558,9 @@ GameObject:
   - component: {fileID: 2016058337}
   - component: {fileID: 2016058336}
   - component: {fileID: 2016058335}
+  - component: {fileID: 2016058338}
   m_Layer: 0
-  m_Name: TheFlowerBlue
+  m_Name: TheFlower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53577,7 +53581,7 @@ MonoBehaviour:
   grid: {fileID: 2125749575}
   gameOverScreen: {fileID: 517735556}
   fatalEnemyCount: 20
-  life: 1
+  life: 100
 --- !u!212 &2016058336
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -53618,7 +53622,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 7d0c7fcfaf380494bb82d4f109c25ff9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -53638,13 +53642,28 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2016058334}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.079, y: -0.195, z: 0}
+  m_LocalPosition: {x: 0.079, y: 0.18, z: 0}
   m_LocalScale: {x: 1.42, y: 1.42, z: 1.42}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2016058338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2016058334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df9c529db9c42974b910bd2a2bec9900, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Blue: {fileID: 21300000, guid: 7d0c7fcfaf380494bb82d4f109c25ff9, type: 3}
+  Green: {fileID: 21300000, guid: 06aca58b05c39c54d95a4a642df20a09, type: 3}
+  Purple: {fileID: 21300000, guid: b0860ec61b8d82e48b43a6b9007fee09, type: 3}
 --- !u!4 &2081739875 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2775919146409806670, guid: baa927f8ee606394dafadfce1c07943b, type: 3}

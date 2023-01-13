@@ -21,7 +21,9 @@ public class PlantLifeSystem : MonoBehaviour
     void Update()
     {
         if (life <= 0)
+        {
             GameOver();
+        }
     }
 
     void UpdateLife()

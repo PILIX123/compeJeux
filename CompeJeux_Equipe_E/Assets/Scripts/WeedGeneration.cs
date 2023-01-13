@@ -65,7 +65,7 @@ public class WeedGeneration : MonoBehaviour
                 {
                     if (color == Color.red)
                     {
-                        GameObject weed = Instantiate(weedAssets[0], new Vector3(pos.x * 0.32f - 9.6f, pos.y * 0.32f - 9.6f, 0f), Quaternion.identity);
+                        GameObject weed = Instantiate(weedAssets[0], new Vector3(pos.x * 0.32f - 9.44f, pos.y * 0.32f - 9.44f, 0f), Quaternion.identity);
                         weed.GetComponent<ClearSpawnMap>().spawnMapLocation = pos;
                         spawnMap.SetPixel(pos.x, pos.y, Color.red);
                         cap = 499;
@@ -73,7 +73,7 @@ public class WeedGeneration : MonoBehaviour
                     }
                     if (color == Color.green)
                     {
-                        GameObject weed = Instantiate(weedAssets[1], new Vector3(pos.x * 0.32f - 9.6f, pos.y * 0.32f - 9.6f, 0f), Quaternion.identity);
+                        GameObject weed = Instantiate(weedAssets[1], new Vector3(pos.x * 0.32f - 9.44f, pos.y * 0.32f - 9.44f, 0f), Quaternion.identity);
                         weed.GetComponent<ClearSpawnMap>().spawnMapLocation = pos;
                         spawnMap.SetPixel(pos.x, pos.y, Color.green);
                         cap = 499;
@@ -81,7 +81,7 @@ public class WeedGeneration : MonoBehaviour
                     }
                     if (color == Color.blue)
                     {
-                        GameObject weed = Instantiate(weedAssets[2], new Vector3(pos.x * 0.32f - 9.6f, pos.y * 0.32f - 9.6f, 0f), Quaternion.identity);
+                        GameObject weed = Instantiate(weedAssets[2], new Vector3(pos.x * 0.32f - 9.44f, pos.y * 0.32f - 9.44f, 0f), Quaternion.identity);
                         weed.GetComponent<ClearSpawnMap>().spawnMapLocation = pos;
                         spawnMap.SetPixel(pos.x, pos.y, Color.blue);
                         cap = 499;
