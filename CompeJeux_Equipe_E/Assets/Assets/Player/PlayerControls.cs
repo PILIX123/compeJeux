@@ -55,9 +55,12 @@ public class PlayerControls : MonoBehaviour
                 animator.SetBool("isMoving", true);
                 if(!audioSource.isPlaying)
                     audioSource.PlayOneShot(stepClip);
+                if(!LeafParticles.isPlaying)
+                    LeafParticles.Play();
             } else
             {
                 animator.SetBool("isMoving", false);
+                LeafParticles.Stop();
             }
             if (movementInput.x < 0)
                 spriteRenderer.flipX = true;
@@ -185,9 +188,9 @@ public class PlayerControls : MonoBehaviour
     {
         audioSource.PlayOneShot(shearsClip);
     }
-    void PlayLeafParticles()
+    /*void PlayLeafParticles()
     {
         LeafParticles.Play();
-    }
+    }*/
 
 }
