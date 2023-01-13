@@ -6,9 +6,14 @@ using UnityEngine.UI;
 
 public class MouseEvents : MonoBehaviour
 {
+    public Sprite SwitchOff, SwitchOn;
+    prefs prefs = new prefs();
     public void PlayGame()
     {
-        SceneManager.LoadScene("MainMap");
+        if (prefs.skip)
+            SceneManager.LoadScene("MainMap");
+        else
+            SceneManager.LoadScene("TutorielMap");
     }
     public void QuitGame()
     {
@@ -25,10 +30,31 @@ public class MouseEvents : MonoBehaviour
     }
     public void switchCouleurOn()
     {
-
+        Button button = GameObject.FindGameObjectWithTag("SwitchColor").GetComponent<Button>();
+        if (prefs.colour)
+        {
+            button.GetComponent<Image>().sprite = SwitchOff;
+            prefs.colour = false;
+        }
+        else
+        {
+            button.GetComponent<Image>().sprite = SwitchOn;
+            prefs.colour = true;
+        }
     }
     public void skipTuto()
     {
+        Button button = GameObject.FindGameObjectWithTag("SwitchTuto").GetComponent<Button>();
+        if (prefs.skip)
+        {
+            button.GetComponent<Image>().sprite = SwitchOff;
+            prefs.skip = false;
+        }
+        else
+        {
+            button.GetComponent<Image>().sprite = SwitchOn;
+            prefs.skip = true;
+        }
 
     }
 }
