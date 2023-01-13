@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Hidden_Sussy : MonoBehaviour
 {
+    bool hit = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,9 +17,12 @@ public class Hidden_Sussy : MonoBehaviour
     }
     public void CollectSussy()
     {
-        Trophy trophy = GetComponentInChildren<Trophy>();
-        trophy.SetEnabled();
-        transform.parent.GetComponent<Sussy_Achievement>().SussyCount++;
-        Destroy(gameObject);
+        if (!hit)
+        {
+            Trophy trophy = GetComponentInChildren<Trophy>();
+            trophy.SetEnabled();
+            transform.parent.GetComponent<Sussy_Achievement>().SussyCount++;
+            GetComponent<SpriteRenderer>().enabled = false;
+        }
     }
 }

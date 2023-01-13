@@ -7,7 +7,7 @@ public class Trophy : MonoBehaviour
     // Start is called before the first frame update
     public void SetEnabled()
     {
-        enabled= true;
+        GetComponent<SpriteRenderer>().enabled = true;
     }
 
     // Update is called once per frame
