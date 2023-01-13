@@ -84,6 +84,12 @@ public class MouseEvents : MonoBehaviour
 
     }
 
+
+    public void Restart()
+    {
+        SceneManager.LoadScene("MainMap");
+    }
+
     public void BackToGame(GameObject pauseMenu)
     {
         Time.timeScale = 1;
