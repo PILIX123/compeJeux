@@ -13,7 +13,7 @@ public class MouseEvents : MonoBehaviour
         if (prefs.skip)
             SceneManager.LoadScene("MainMap");
         else
-            SceneManager.LoadScene("TutorielMap");
+            SceneManager.LoadScene("Tutorial");
     }
     public void QuitGame()
     {
