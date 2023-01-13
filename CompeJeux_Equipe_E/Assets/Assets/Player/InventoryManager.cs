@@ -18,7 +18,7 @@ public class InventoryManager : MonoBehaviour
     {   grid = FindObjectOfType<Grid>();
         dirt = GameObject.FindGameObjectWithTag("Dirt").GetComponent<Tilemap>();
         inventory.Add("Petunia", 3);
-        inventory.Add("Jonquiere", 3);
+        inventory.Add("Althea", 3);
         inventory.Add("Tulipe", 3);
     }
 
@@ -47,7 +47,7 @@ public class InventoryManager : MonoBehaviour
         if ((float)input.Get() == 1)
             Selected = "Petunia";
         if ((float)input.Get() == 2)
-            Selected = "Jonquiere";
+            Selected = "Althea";
         if ((float)input.Get() == 3)
             Selected = "Tulipe";
     }
@@ -55,5 +55,15 @@ public class InventoryManager : MonoBehaviour
     {
         dirt.SetTile(cellpos, grow);
         inventory[Selected] = inventory[Selected] - 3;
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (gameObject.name == "farming-tileset_78")
+            inventory["Althea"] +=1;
+        if (gameObject.name == "farming-tileset_79")
+            inventory["Tulipe"] += 1;
+        if (gameObject.name == "farming-tileset_80")
+            inventory["Petunia"]+=1;
+        Destroy(collision.gameObject);
     }
 }

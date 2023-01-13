@@ -121,6 +121,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc7d706f3c4b7fc4ea4455b09dff90c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  grid: {fileID: 0}
+  droplayer: {fileID: 0}
+  Seed1: {fileID: 11400000, guid: 74a4d9bbfaa49ab4bad17a7174595d4f, type: 2}
+  Seed2: {fileID: 11400000, guid: c8993183236529747a31aa17b766cfc3, type: 2}
+  Seed3: {fileID: 11400000, guid: 36743910281814a41a0e6f2a081faf11, type: 2}
   health: 0
 --- !u!61 &-2893389846699598509
 BoxCollider2D:
@@ -161,4 +166,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnMapLocation: {x: 0, y: 0}
-  spawnMap: {fileID: 2800000, guid: 73a284091c7b0914ba89b79e0f14fe04, type: 3}
+  grid: {fileID: 0}
