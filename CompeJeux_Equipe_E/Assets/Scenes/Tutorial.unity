@@ -444,6 +444,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 921931665}
+  - {fileID: 2014699899}
   m_Father: {fileID: 1810986806}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7260,6 +7261,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: bc17e80ca586f2d4a98ada93bc6a28e8, type: 3}
     - target: {fileID: -4756068112770282188, guid: baa927f8ee606394dafadfce1c07943b, type: 3}
+      propertyPath: seedNb
+      value: 
+      objectReference: {fileID: 2014699900}
+    - target: {fileID: -4756068112770282188, guid: baa927f8ee606394dafadfce1c07943b, type: 3}
       propertyPath: Petunia
       value: 
       objectReference: {fileID: 21300000, guid: 299b1fceffbabaa4ba2ed49422ce0369, type: 3}
@@ -7543,7 +7548,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 517471558}
-  - {fileID: 2014699899}
   m_Father: {fileID: 651679781}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7800,7 +7804,7 @@ GameObject:
   - component: {fileID: 2014699900}
   m_Layer: 5
   m_Name: Text (TMP)
-  m_TagString: Untagged
+  m_TagString: seedslottxt
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7812,17 +7816,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2014699898}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.0032, y: 0.0032, z: 0.0032}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.0032000002}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1810986806}
+  m_Father: {fileID: 517471558}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.074, y: -0.242}
+  m_AnchoredPosition: {x: -1.5343747, y: -0.29375}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2014699900
@@ -7879,7 +7883,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 4
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
