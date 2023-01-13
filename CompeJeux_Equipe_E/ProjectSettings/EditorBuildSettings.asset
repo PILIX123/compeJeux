@@ -8,5 +8,17 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMap.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: 2146817156155e44c8b58171ff0584d6
+  - enabled: 1
+    path: Assets/Scenes/OptionsMenu.unity
+    guid: 912e739ab62306242b0cd5ce7c8ae471
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 902888512fd462243b8fbf14606fb8d4
+  - enabled: 1
+    path: Assets/Scenes/SplashScreenCL.unity
+    guid: f5d1d32797e31d047bd66915e0418355
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: bee667bffb46dfd459b249bc501fbacf, type: 2}
