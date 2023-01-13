@@ -149,6 +149,7 @@ public class PlayerControls : MonoBehaviour
     }
     void ScytheAttack()
     {
+        audioSource.PlayOneShot(scytheClip);
         if(spriteRenderer.flipX == true)
         {
             scytheAttack.AttackLeft();
@@ -157,10 +158,10 @@ public class PlayerControls : MonoBehaviour
         {
             scytheAttack.AttackRight();
         }
-        audioSource.PlayOneShot(scytheClip);
     }
     void ShovelAttack()
     {
+        audioSource.PlayOneShot(shovelClip);
         if (spriteRenderer.flipX == true)
         {
             shovelAttack.AttackLeft();
@@ -169,10 +170,10 @@ public class PlayerControls : MonoBehaviour
         {
             shovelAttack.AttackRight();
         }
-        audioSource.PlayOneShot(shovelClip);
     }
     void ShearsAttack()
     {
+        ShearsSound();
         if (spriteRenderer.flipX == true)
         {
             shearsAttack.AttackLeft();
@@ -181,16 +182,11 @@ public class PlayerControls : MonoBehaviour
         {
             shearsAttack.AttackRight();
         }
-        ShearsSound();
         Invoke("ShearsSound", 0.3f);
     }
     void ShearsSound()
     {
         audioSource.PlayOneShot(shearsClip);
     }
-    /*void PlayLeafParticles()
-    {
-        LeafParticles.Play();
-    }*/
 
 }
