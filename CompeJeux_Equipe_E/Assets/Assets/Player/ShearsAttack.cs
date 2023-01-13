@@ -6,7 +6,6 @@ public class ShearsAttack : MonoBehaviour
 {
     public Collider2D shearsCollider;
     Vector2 rightAttackOffset;
-    float damage = 1.5f;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +27,7 @@ public class ShearsAttack : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        float damage = transform.parent.GetComponent<PlayerControls>().damage/2;
         //weak to tool
         if (collision.tag == "Y")
         {
