@@ -6,29 +6,25 @@ using UnityEngine.Tilemaps;
 using UnityEngine.SceneManagement;
 public class PlayerControls : MonoBehaviour
 {
-    bool canMove = true;
-    bool canDash = true;
-    public float moveSpeed = 1f;
-    public float collisionOffset = 0;
+    bool canMove = true, canDash = true;
+    public float moveSpeed = 1f, collisionOffset = 0;
     public Animator animator;
-    SpriteRenderer spriteRenderer;
     public float damage = 3f;
+    SpriteRenderer spriteRenderer, uislot, seedslot;
     public ShovelAttack shovelAttack;
     public ScytheAttack scytheAttack;
     public ShearsAttack shearsAttack;
+    public Sprite shovel, shear, scythe;
     public Tilemap tools;
     public ParticleSystem LeafParticles;
     Grid grid;
     public string Tool = "";
-
     public ContactFilter2D movementFilter;
     List<RaycastHit2D> castCollision = new List<RaycastHit2D>();
-
     public AudioClip shovelClip;
     public AudioClip shearsClip;
     public AudioClip scytheClip;
     public AudioClip stepClip;
-
     Vector2 movementInput;
     Rigidbody2D rb;
     AudioSource audioSource;
@@ -40,7 +36,7 @@ public class PlayerControls : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         grid = FindObjectOfType<Grid>();
         tools = GameObject.FindGameObjectWithTag("Tools").GetComponent<Tilemap>();
-
+        uislot = GameObject.FindGameObjectWithTag("uislot").GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         spriteRenderer= GetComponent<SpriteRenderer>();
     }
@@ -136,11 +132,20 @@ public class PlayerControls : MonoBehaviour
         if (tile == null)
             return;
         if (tile.name == "farming-tileset_104")
+        {
             Tool = "Scythe";
+            uislot.sprite = scythe;
+        }
         if (tile.name == "farming-tileset_105")
+        {
             Tool = "Shovel";
+            uislot.sprite = shovel;
+        }
         if (tile.name == "shears")
+        {
             Tool = "Shears";
+            uislot.sprite = shear;
+        }
     }
     void OnFire()
     {

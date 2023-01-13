@@ -1,18 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlantLifeSystem : MonoBehaviour
 {
     public GameObject grid;
     public GameObject gameOverScreen;
+    public Text timeTxt;
+    public Text flowerTxt;
+    public Text weedTxt;
     public int fatalEnemyCount = 100;
     public float life = 100;
+    public bool isGameOver;
     private WeedGeneration generationSystem;
+    LevelManager levelManager;
 
     // Start is called before the first frame update
     void Start()
     {
+        levelManager = GameObject.Find("Level Manager").GetComponent<LevelManager>();
         generationSystem = grid.GetComponent<WeedGeneration>();
         InvokeRepeating("UpdateLife", 1f, 1f);
     }
@@ -20,8 +28,9 @@ public class PlantLifeSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (life <= 0)
+        if (life <= 0 && !isGameOver)
         {
+            isGameOver = true;
             GameOver();
         }
     }
@@ -44,5 +53,8 @@ public class PlantLifeSystem : MonoBehaviour
     void GameOver()
     {
         gameOverScreen.SetActive(true);
+        timeTxt.text += levelManager.time;
+        flowerTxt.text += levelManager.flowersPlanted;
+        weedTxt.text += levelManager.weedsKilled;
     }
 }
