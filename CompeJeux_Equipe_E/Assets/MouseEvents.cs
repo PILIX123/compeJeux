@@ -8,9 +8,10 @@ public class MouseEvents : MonoBehaviour
 {
     public Sprite SwitchOff, SwitchOn;
     prefs prefs = new prefs();
+
     public void PlayGame()
     {
-        if (prefs.skip)
+        if (prefs.skip == true)
             SceneManager.LoadScene("MainMap");
         else
             SceneManager.LoadScene("Tutorial");
@@ -31,29 +32,29 @@ public class MouseEvents : MonoBehaviour
     public void switchCouleurOn()
     {
         Button button = GameObject.FindGameObjectWithTag("SwitchColor").GetComponent<Button>();
-        if (prefs.colour)
-        {
-            button.GetComponent<Image>().sprite = SwitchOff;
-            prefs.colour = false;
-        }
-        else
+        if (prefs.colour == false)
         {
             button.GetComponent<Image>().sprite = SwitchOn;
             prefs.colour = true;
+        }
+        else
+        {
+            button.GetComponent<Image>().sprite = SwitchOff;
+            prefs.colour = false;
         }
     }
     public void skipTuto()
     {
         Button button = GameObject.FindGameObjectWithTag("SwitchTuto").GetComponent<Button>();
-        if (prefs.skip)
-        {
-            button.GetComponent<Image>().sprite = SwitchOff;
-            prefs.skip = false;
-        }
-        else
+        if (prefs.skip == false)
         {
             button.GetComponent<Image>().sprite = SwitchOn;
             prefs.skip = true;
+        }
+        else
+        {
+            button.GetComponent<Image>().sprite = SwitchOff;
+            prefs.skip = false;
         }
 
     }

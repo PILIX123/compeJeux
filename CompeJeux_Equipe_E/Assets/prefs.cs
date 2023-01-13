@@ -5,6 +5,6 @@ using UnityEngine;
 
 public class prefs : MonoBehaviour
 {
-    public bool skip { get; set; } = false;
-    public bool colour { get; set; } = false;
+    public bool skip { get; set; }
+    public bool colour { get; set; }
 }
