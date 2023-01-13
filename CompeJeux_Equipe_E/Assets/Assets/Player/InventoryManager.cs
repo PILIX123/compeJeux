@@ -15,6 +15,10 @@ public class InventoryManager : MonoBehaviour
     public AudioClip seedsClip;
     AudioSource audioSource;
 
+    public GameObject BoostFlowerBlue;
+    public GameObject BoostFlowerRed;
+    public GameObject BoostFlowerPurple;
+
     public Tile None;
     Tilemap DropLayer;
     
@@ -44,7 +48,6 @@ public class InventoryManager : MonoBehaviour
         inventory.TryGetValue(Selected, out int number);
         if (number >= 3)
             Planting(cellpos);
-        audioSource.PlayOneShot(seedsClip);
     }
     void OnSelectPlant(InputValue input) 
     {
@@ -59,13 +62,26 @@ public class InventoryManager : MonoBehaviour
     }
     void Planting(Vector3Int cellpos)
     {
+        audioSource.PlayOneShot(seedsClip);
         dirt.SetTile(cellpos, grow);
         inventory[Selected] = inventory[Selected] - 3;
+        switch (Selected)
+        {
+            case ("Petunia"):
+                Instantiate(BoostFlowerBlue, transform.position, transform.rotation);
+                break;
+            case ("Althea"):
+                Instantiate(BoostFlowerRed, transform.position, transform.rotation);
+                break;
+            case ("Tulipe"):
+                Instantiate(BoostFlowerPurple, transform.position, transform.rotation);
+                break;
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         switch (collision.gameObject.name) {
-            case ("AthleaSeed(Clone)"):
+            case ("AltheaSeed(Clone)"):
                 inventory["Althea"] += 1;
                 break;
             case ("TulipeSeed(Clone)"):

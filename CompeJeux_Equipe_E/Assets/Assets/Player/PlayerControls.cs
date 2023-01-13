@@ -12,6 +12,7 @@ public class PlayerControls : MonoBehaviour
     public float collisionOffset = 0;
     public Animator animator;
     SpriteRenderer spriteRenderer;
+    public float damage = 3f;
     public ShovelAttack shovelAttack;
     public ScytheAttack scytheAttack;
     public ShearsAttack shearsAttack;

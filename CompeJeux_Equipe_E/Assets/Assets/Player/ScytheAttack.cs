@@ -6,11 +6,11 @@ public class ScytheAttack : MonoBehaviour
 {
     public Collider2D scytheCollider;
     Vector2 rightAttackOffset;
-    float damage = 3;
     // Start is called before the first frame update
     void Start()
     {
         rightAttackOffset = transform.localPosition;
+
     }
     public void AttackRight()
     {
@@ -28,6 +28,7 @@ public class ScytheAttack : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        float damage = transform.parent.GetComponent<PlayerControls>().damage;
         //weak to tool
         if (collision.tag == "X")
         {
